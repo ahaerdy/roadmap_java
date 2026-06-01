@@ -95,7 +95,7 @@ flowchart TD
 **Aprofundando em OOP**
 - [x] [Herança](./orientacao_a_objetos/aprofundando/heranca/)
     - [x] [Herança em Java](./orientacao_a_objetos/aprofundando/heranca/heranca_em_java/) ✓
-    - [x] [🔹Herança em Java com Exemplos](./orientacao_a_objetos/aprofundando/heranca/heranca_em_java_com_exemplos/) ✓
+    - [x] [🔸Herança em Java com Exemplos](./orientacao_a_objetos/aprofundando/heranca/heranca_em_java_com_exemplos/) ✓
 - [ ] Abstração
 - [ ] Encapsulamento
 - [ ] Interfaces
