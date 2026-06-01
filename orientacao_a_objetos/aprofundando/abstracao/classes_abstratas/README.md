@@ -14,7 +14,7 @@ public abstract class MyAbstractClass {
 
 ```
 
-Isso é tudo o que há para declarar uma classe abstrata. A partir desta instgrução você não poderá mais criar instâncias de `MyAbstractClass`. Portanto, o seguinte código Java não é mais válido:
+A partir desta declaração você não poderá mais criar instâncias de `MyAbstractClass`. Portanto, o seguinte código Java não é mais válido:
 
 ```java
 // Tentativa de criar um objeto a partir da classe abstrata
@@ -23,7 +23,7 @@ MyAbstractClass myClassInstance =
 
 ```
 
-Se você tentar compilar o código acima, o compilador Java gerará um erro, dizendo que você não pode instanciar `MyAbstractClass` porque ela é uma classe abstrata.
+Se você tentar compilar o código acima, o compilador gerará um erro, dizendo que você não pode instanciar `MyAbstractClass` porque ela é uma classe abstrata.
 
 ## Métodos Abstratos
 
