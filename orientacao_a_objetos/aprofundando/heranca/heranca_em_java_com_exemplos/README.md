@@ -90,7 +90,7 @@ public class Animal {
 
 O `Animal` é a classe base aqui. Vamos criar uma classe `Cat` (Gato) que herda da classe Animal.
 
-**Subclasse: Cat**
+**Subclasse: `Cat`**
 
 ```java
 // Define o pacote ao qual a classe pertence, mantendo-a no mesmo diretório de Animal
