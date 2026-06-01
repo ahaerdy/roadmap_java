@@ -2,7 +2,7 @@
 
 ## O Problema que Queremos Resolver
 
-Imagine que você escreveu um sistema que baixa e processa dados de URLs. SE o código que *usa* o processador DEPENDE DIRETAMENTE da classe que *faz* o processamento, qualquer mudança nessa classe pode quebrar quem a usa. Pior: trocar a implementação exige mexer em todo o código que a chama.
+Imagine que você escreveu um sistema que baixa e processa dados de URLs. **SE** o código que *usa* o processador **DEPENDE DIRETAMENTE** da classe que *faz* o processamento, qualquer mudança nessa classe pode quebrar quem a usa. Pior: trocar a implementação exige mexer em todo o código que a chama.
 
 A solução clássica em Java é separar o **contrato** (o que o componente promete fazer) da **implementação** (como ele faz). É exatamente para isso que existem interfaces e classes abstratas — dois mecanismos distintos, com propósitos complementares.
 
