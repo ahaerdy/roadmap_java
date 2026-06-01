@@ -154,21 +154,40 @@ Observe que estamos usando a palavra-chave `extends` para implementar a herança
 Vamos escrever uma classe de teste simples para criar um objeto `Cat` e usar alguns de seus métodos.
 
 ```java
+// Define o pacote ao qual a classe pertence
 package com.journaldev.inheritance;
 
+/**
+ * Classe de teste para demonstrar a execução da herança na prática.
+ */
 public class AnimalInheritanceTest {
 
+	// Ponto de entrada principal (main method) que inicia a execução do programa Java
 	public static void main(String[] args) {
+		
+		// Instanciação do objeto: cria um objeto do tipo 'Cat' na memória Heap.
+		// O construtor de Cat é invocado, o qual por sua vez aciona o construtor de Animal via super().
+		// Parâmetros passados: vegetarian = false, eats = "milk", noOfLegs = 4, color = "black"
 		Cat cat = new Cat(false, "milk", 4, "black");
 
+		// Imprime se o gato é vegetariano.
+		// O método isVegetarian() NÃO está declarado em Cat, mas é acessado aqui porque foi HERDADO de Animal.
 		System.out.println("Cat is Vegetarian?" + cat.isVegetarian());
+		
+		// Imprime o que o gato come.
+		// O método getEats() também é invocado diretamente a partir da superclasse Animal.
 		System.out.println("Cat eats " + cat.getEats());
+		
+		// Imprime a quantidade de pernas.
+		// Demonstra o reuso de código: a lógica de armazenamento e retorno do inteiro pertence a Animal.
 		System.out.println("Cat has " + cat.getNoOfLegs() + " legs.");
+		
+		// Imprime a cor do gato.
+		// O método getColor() é específico da subclasse Cat; a superclasse Animal não tem conhecimento dele.
 		System.out.println("Cat color is " + cat.getColor());
 	}
 
 }
-
 ```
 
 **Saída:**
