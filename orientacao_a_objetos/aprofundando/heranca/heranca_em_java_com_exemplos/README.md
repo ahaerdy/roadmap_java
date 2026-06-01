@@ -39,7 +39,7 @@ public class Animal {
 	/**
 	 * Construtor sobrecarregado (com argumentos).
 	 * Permite inicializar um objeto Animal já definindo todos os seus atributos.
-	 * * @param veg  Define se é vegetariano
+	 * @param veg  Define se é vegetariano
 	 * @param food Define o tipo de alimentação
 	 * @param legs Define o número de pernas
 	 */
