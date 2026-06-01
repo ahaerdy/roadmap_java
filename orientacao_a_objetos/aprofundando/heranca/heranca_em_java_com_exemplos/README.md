@@ -216,8 +216,9 @@ A classe `Cat` não possui o método `getEats()`, mas, ainda assim, o programa f
 ```java
 Cat c = new Cat(); //instância da subclasse
 Animal a = c; //upcasting, está correto já que Cat também é um Animal
-
 ```
+
+> **Nota de Arquitetura da Memória:** É fundamental compreender que, ao realizar o upcasting de `c` para `a`, **não ocorre perda de dados ou atributos na memória**. O objeto criado no Heap continua sendo um `Cat` completo e mantém todas as suas propriedades (incluindo as específicas, como `color`) intactas. O que ocorre é uma **perda temporária de acesso** em tempo de compilação: como a variável `a` é do tipo `Animal`, o compilador limita a sua visão, bloqueando o acesso direto aos membros exclusivos da subclasse `Cat` através desse ponteiro.
 
 8. Quando uma instância de uma Superclasse é atribuída a uma variável de uma Subclasse, isso é chamado de **downcasting**. Precisamos fazer o cast explicitamente para a Subclasse. Por exemplo:
 
