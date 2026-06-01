@@ -4,7 +4,7 @@ Uma *classe abstrata em Java* é uma classe que não pode ser instanciada, o que
 
 ## Declarando uma Classe Abstrata em Java
 
-Em Java, você declara que uma classe é abstrata adicionando a palavra-chave `abstract` à declaração da classe. Aqui está um exemplo de classe abstrata em Java:
+Em Java, você declara que uma classe é abstrata adicionando a palavra-chave `abstract` à declaração da classe. Aqui está um exemplo:
 
 ```java
 // A palavra-chave 'abstract' define que esta classe é abstrata e não pode ser instanciada diretamente
@@ -14,7 +14,7 @@ public abstract class MyAbstractClass {
 
 ```
 
-Isso é tudo o que há para declarar uma classe abstrata em Java. Agora você não pode criar instâncias de `MyAbstractClass`. Portanto, o seguinte código Java não é mais válido:
+Isso é tudo o que há para declarar uma classe abstrata. A partir desta instgrução você não poderá mais criar instâncias de `MyAbstractClass`. Portanto, o seguinte código Java não é mais válido:
 
 ```java
 // Tentativa de criar um objeto a partir da classe abstrata
