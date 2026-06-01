@@ -130,7 +130,7 @@ public abstract class URLProcessorBase {
         }
     }
 
-    // Método abstrato protegido para isolar o processamento dos dados brutos
+    // Método ABSTRATO protegido para isolar o processamento dos dados brutos
     // Deve ser implementado por quem estender esta classe
     protected abstract void processURLData(InputStream input)
         throws IOException;
