@@ -1,10 +1,10 @@
-# Herança em Java
+# Herança em Java com Exemplos
 
 A herança em Java é o método para criar uma hierarquia entre classes ao herdar de outras classes.
 
-A herança em Java é transitiva - portanto, se Sedan estende Car (Carro) e Car estende Vehicle (Veículo), então Sedan também é herdado da classe Vehicle. O Vehicle se torna a superclasse tanto de Car quanto de Sedan.
+A herança em Java é transitiva - portanto, se `Sedan` estende `Car` (Carro) e `Car` estende `Vehicle` (Veículo), então `Sedan` também herda da classe `Vehicle`. O `Vehicle` se torna a superclasse tanto de `Car` quanto de `Sedan`.
 
-A herança é amplamente utilizada em aplicações Java, por exemplo, estendendo a classe Exception para criar uma classe de exceção específica da aplicação que contenha mais informações, como códigos de erro. Por exemplo, NullPointerException.
+A herança é amplamente utilizada em aplicações Java, por exemplo, estendendo a classe Exception para criar uma classe de exceção específica da aplicação que contenha mais informações, como códigos de erro. Por exemplo, `NullPointerException`.
 
 ## Exemplo de Herança em Java
 
