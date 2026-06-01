@@ -88,7 +88,7 @@ public class Animal {
 
 ```
 
-O Animal é a classe base aqui. Vamos criar uma classe Cat (Gato) que herda da classe Animal.
+O `Animal` é a classe base aqui. Vamos criar uma classe `Cat` (Gato) que herda da classe Animal.
 
 **Subclasse: Cat**
 
@@ -151,7 +151,7 @@ Observe que estamos usando a palavra-chave `extends` para implementar a herança
 
 ## Programa de Teste de Herança em Java
 
-Vamos escrever uma classe de teste simples para criar um objeto Cat e usar alguns de seus métodos.
+Vamos escrever uma classe de teste simples para criar um objeto `Cat` e usar alguns de seus métodos.
 
 ```java
 package com.journaldev.inheritance;
