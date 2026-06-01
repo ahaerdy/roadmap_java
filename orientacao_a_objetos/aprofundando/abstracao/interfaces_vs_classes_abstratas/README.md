@@ -1,7 +1,5 @@
 # Interfaces vs. Classes Abstratas em Java
 
-Duas perguntas feitas frequentemente são: Qual a diferença entre interfaces e classes abstratas, e quando usar cada uma. Tendo respondido a essa pergunta por e-mail várias vezes, decidi escrever este tutorial sobre interfaces Java vs. classes abstratas.
-
 As interfaces Java são usadas para desacoplar a interface de algum componente de sua implementação. Em outras palavras, para tornar as classes que utilizam a interface independentes das classes que a implementam. Assim, você pode trocar a implementação da interface sem precisar alterar a classe que a utiliza.
 
 As classes abstratas são tipicamente usadas como classes base para extensão por subclasses. Algumas linguagens de programação usam classes abstratas para alcançar o polimorfismo e separar a interface da implementação, mas em Java você usa interfaces para isso. Lembre-se de que uma classe Java pode ter apenas 1 superclasse, mas pode implementar múltiplas interfaces. Sendo assim, se uma classe já possui uma superclasse diferente, ela pode implementar uma interface, mas não pode estender outra classe abstrata. Portanto, as interfaces são um mecanismo mais flexível para expor uma interface comum.
