@@ -90,7 +90,7 @@ public abstract class MyAbstractProcess {
         // implementação diretamente na superclasse abstrata
     }
 
-    // Método abstrato que força cada subclasse a fornecer sua própria lógica customizada para a ação
+    // Método ABSTRATO que força cada subclasse a fornecer sua própria lógica customizada para a ação
     public abstract void action(); // implementado pelas subclasses
 
     // Outro método concreto com comportamento fixo compartilhado
@@ -101,7 +101,7 @@ public abstract class MyAbstractProcess {
 
 ```
 
-Observe como o método `action()` é abstrato. As subclasses de `MyAbstractProcess` podem agora estender `MyAbstractProcess` e apenas sobrescrever o método `action()`.
+Observe como o método `action()` é ABSTRATO. As subclasses de `MyAbstractProcess` podem agora estender `MyAbstractProcess` e apenas sobrescrever o método `action()`.
 
 Quando o método `process()` da subclasse é chamado, o processo completo é executado, incluindo o `stepBefore()` e `stepAfter()` da superclasse abstrata, e o método `action()` da subclasse.
 

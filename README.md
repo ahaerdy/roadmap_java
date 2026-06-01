@@ -97,7 +97,7 @@ flowchart TD
     - [x] [Herança em Java](./orientacao_a_objetos/aprofundando/heranca/heranca_em_java/) ✓
     - [x] [Herança em Java com Exemplos](./orientacao_a_objetos/aprofundando/heranca/heranca_em_java_com_exemplos/) ✓
 - [x] [Abstração](./orientacao_a_objetos/aprofundando/abstracao/)
-    - [x] [Classes abstratas](./orientacao_a_objetos/aprofundando/abstracao/classes_abstratas/)
+    - [x] [Classes abstratas](./orientacao_a_objetos/aprofundando/abstracao/classes_abstratas/) ✓
     - [x] [Interfaces vs Calsses Abstratas](./orientacao_a_objetos/aprofundando/abstracao/interfaces_vs_classes_abstratas/)
 - [ ] Encapsulamento
 - [ ] Interfaces
