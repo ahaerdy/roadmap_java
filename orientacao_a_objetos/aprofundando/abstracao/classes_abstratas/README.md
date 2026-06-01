@@ -1,6 +1,6 @@
 # Classes Abstratas em Java
 
-Uma *classe abstrata em Java* é uma classe que não pode ser instanciada, o que significa que você não pode criar novas instâncias de uma classe abstrata. O propósito de uma classe abstrata é funcionar como uma base para subclasses. Este tutorial de classes abstratas em Java explica como as classes abstratas são criadas em Java e quais regras se aplicam a elas. Este tutorial se aprofunda no propósito das classes abstratas em Java de forma mais detalhada em direção ao final deste texto.
+Uma *classe abstrata em Java* é uma classe que não pode ser instanciada, o que significa que você não pode criar novas instâncias de uma classe abstrata. O propósito de uma classe abstrata é funcionar como uma base para subclasses. Este tutorial explica como as classes abstratas são criadas em Java e quais regras se aplicam a elas. 
 
 ## Declarando uma Classe Abstrata em Java
 
