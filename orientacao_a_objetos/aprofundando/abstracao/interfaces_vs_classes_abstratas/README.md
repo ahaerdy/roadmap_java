@@ -1,6 +1,6 @@
 # Interfaces vs. Classes Abstratas em Java
 
-## O Problema que Queremos Resolver
+## O Problema que se Busca Resolver
 
 Imagine que você escreveu um sistema que baixa e processa dados de URLs. Se o código que *usa* o processador conhece diretamente a classe que *faz* o processamento, qualquer mudança nessa classe pode quebrar quem a usa. Pior: trocar a implementação exige mexer em todo o código que a chama.
 
