@@ -15,44 +15,71 @@ Vamos ver como implementar a herança em Java com um exemplo simples.
 **Superclasse: Animal**
 
 ```java
+// Define o pacote ao qual a classe pertence, organizando o código-fonte
 package com.journaldev.inheritance;
 
+/**
+ * Classe base (Superclasse) Animal.
+ * Serve como molde genérico para classes mais específicas (como Cat ou Dog).
+ */
 public class Animal {
 
-	private boolean vegetarian;
+	// Atributos privados: encapsulam os dados para que não sejam acessados diretamente de fora da classe
+	private boolean vegetarian; // Indica se o animal é vegetariano (verdadeiro/falso)
+	private String eats;        // Armazena o que o animal come
+	private int noOfLegs;       // Armazena a quantidade de pernas do animal
 
-	private String eats;
-
-	private int noOfLegs;
-
+	/**
+	 * Construtor padrão (sem argumentos).
+	 * Permite criar um objeto Animal sem definir os atributos imediatamente.
+	 * Essencial para subclasses que não chamam explicitamente um construtor com parâmetros.
+	 */
 	public Animal(){}
 
+	/**
+	 * Construtor sobrecarregado (com argumentos).
+	 * Permite inicializar um objeto Animal já definindo todos os seus atributos.
+	 * * @param veg  Define se é vegetariano
+	 * @param food Define o tipo de alimentação
+	 * @param legs Define o número de pernas
+	 */
 	public Animal(boolean veg, String food, int legs){
+		// A palavra-chave 'this' diferencia o atributo da classe do parâmetro recebido
 		this.vegetarian = veg;
 		this.eats = food;
 		this.noOfLegs = legs;
 	}
 
+	// =========================================================================
+	// Métodos Getters e Setters (Interface pública para acessar os dados privados)
+	// =========================================================================
+
+	// Retorna o estado booleano do atributo vegetarian
 	public boolean isVegetarian() {
 		return vegetarian;
 	}
 
+	// Permite alterar o estado do atributo vegetarian com validação/controle se necessário
 	public void setVegetarian(boolean vegetarian) {
 		this.vegetarian = vegetarian;
 	}
 
+	// Retorna o que o animal come
 	public String getEats() {
 		return eats;
 	}
 
+	// Define ou altera o alimento do animal
 	public void setEats(String eats) {
 		this.eats = eats;
 	}
 
+	// Retorna a quantidade de pernas
 	public int getNoOfLegs() {
 		return noOfLegs;
 	}
 
+	// Define ou altera a quantidade de pernas
 	public void setNoOfLegs(int noOfLegs) {
 		this.noOfLegs = noOfLegs;
 	}
