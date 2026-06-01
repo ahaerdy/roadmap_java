@@ -108,6 +108,11 @@ public class Cat extends Animal {
 	/**
 	 * Primeiro construtor sobrecarregado.
 	 * Recebe os dados de herança e define uma cor padrão.
+	 * * REGRA DE OURO DO JAVA: Se você não colocar a instrução super() explicitamente na 
+	 * primeira linha de um construtor de uma subclasse, o próprio Java tentará inserir, 
+	 * de forma invisível, um super() sem parâmetros. Como você usou parâmetros específicos, 
+	 * digitar o super(veg, food, legs) explicitamente foi fundamental para chamar o 
+	 * construtor sobrecarregado correto em vez do construtor vazio.
 	 */
 	public Cat(boolean veg, String food, int legs) {
 		// A instrução super() invoca obrigatoriamente o construtor correspondente da Superclasse (Animal)
@@ -121,6 +126,10 @@ public class Cat extends Animal {
 	/**
 	 * Segundo construtor sobrecarregado.
 	 * Recebe tanto os dados da Superclasse quanto a cor customizada para o gato.
+	 * * REGRA DE OURO DO JAVA: Assim como no construtor anterior, a chamada explícita ao 
+	 * super(veg, food, legs) garante que o fluxo suba na hierarquia e execute especificamente 
+	 * o construtor sobrecarregado de Animal, preenchendo os atributos herdados antes de 
+	 * definir as propriedades exclusivas da subclasse.
 	 */
 	public Cat(boolean veg, String food, int legs, String color){
 		// Invoca o construtor da Superclasse para tratar as propriedades genéricas de Animal
@@ -192,7 +201,7 @@ public class AnimalInheritanceTest {
 
 **Saída:**
 
-A classe Cat não possui o método `getEats()`, mas, ainda assim, o programa funciona porque ele é herdado da classe Animal.
+A classe `Cat` não possui o método `getEats()`, mas, ainda assim, o programa funciona porque ele é herdado da classe Animal.
 
 ## Pontos Importantes
 
