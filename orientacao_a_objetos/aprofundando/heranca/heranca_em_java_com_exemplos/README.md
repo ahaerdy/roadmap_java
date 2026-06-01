@@ -50,9 +50,9 @@ public class Animal {
 		this.noOfLegs = legs;
 	}
 
-	// =========================================================================
+	// ===================================================---======================
 	// Métodos Getters e Setters (Interface pública para acessar os dados privados)
-	// =========================================================================
+	// ======================================================---===================
 
 	// Retorna o estado booleano do atributo vegetarian
 	public boolean isVegetarian() {
@@ -93,32 +93,58 @@ O Animal é a classe base aqui. Vamos criar uma classe Cat (Gato) que herda da c
 **Subclasse: Cat**
 
 ```java
+// Define o pacote ao qual a classe pertence, mantendo-a no mesmo diretório de Animal
 package com.journaldev.inheritance;
 
-public class Cat extends Animal{
+/**
+ * Subclasse Cat (Gato) que estende (extends) a Superclasse Animal.
+ * Isso significa que Cat herda automaticamente todos os métodos e atributos não privados de Animal.
+ */
+public class Cat extends Animal {
 
+	// Atributo específico da subclasse (Animal não possui 'color')
 	private String color;
 
+	/**
+	 * Primeiro construtor sobrecarregado.
+	 * Recebe os dados de herança e define uma cor padrão.
+	 */
 	public Cat(boolean veg, String food, int legs) {
+		// A instrução super() invoca obrigatoriamente o construtor correspondente da Superclasse (Animal)
+		// Ela repassa os parâmetros para inicializar os atributos privados vegetarian, eats e noOfLegs
 		super(veg, food, legs);
-		this.color="White";
+		
+		// Inicializa o atributo específico desta subclasse com um valor padrão
+		this.color = "White";
 	}
 
+	/**
+	 * Segundo construtor sobrecarregado.
+	 * Recebe tanto os dados da Superclasse quanto a cor customizada para o gato.
+	 */
 	public Cat(boolean veg, String food, int legs, String color){
+		// Invoca o construtor da Superclasse para tratar as propriedades genéricas de Animal
 		super(veg, food, legs);
-		this.color=color;
+		
+		// Inicializa o atributo de cor com o valor customizado recebido no parâmetro
+		this.color = color;
 	}
 
+	// =========================================================================
+	// Métodos Getters e Setters específicos da subclasse Cat
+	// =========================================================================
+
+	// Retorna a cor específica do gato
 	public String getColor() {
 		return color;
 	}
 
+	// Permite alterar a cor do gato
 	public void setColor(String color) {
 		this.color = color;
 	}
 
 }
-
 ```
 
 Observe que estamos usando a palavra-chave `extends` para implementar a herança em Java.
