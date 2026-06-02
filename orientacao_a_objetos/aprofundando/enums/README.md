@@ -22,14 +22,13 @@ Podemos referenciar constantes no enum acima desta forma:
 ```java
 // Declaração de uma variável do tipo 'Level' recebendo a constante 'HIGH'
 Level level = Level.HIGH;
-
 ```
 
 Observe como a variável `level` é do tipo `Level`, que é o tipo enum do Java definido no exemplo acima. A variável `level` pode assumir uma das constantes do enum `Level` como valor (`HIGH`, `MEDIUM` ou `LOW`). Neste caso, `level` é definida como `HIGH`.
 
 ### Enums em Instruções if
 
-Como os enums do Java são constantes, você frequentemente terá que comparar uma variável que aponta para uma constante de enum com as constantes possíveis no tipo enum. Aqui está um exemplo de uso de um enum do Java em uma instrução `if`:
+Como os enums são constantes, você frequentemente terá que comparar uma variável que aponta para uma constante de enum com as constantes possíveis no tipo enum. Aqui está um exemplo de uso de um enum em uma instrução `if`:
 
 ```java
 // Simulação: Variável 'level' inicializada com alguma das constantes existentes
@@ -43,16 +42,15 @@ if (level == Level.HIGH) {
 } else if (level == Level.LOW) {
     // Código executado se a variável for igual à constante LOW
 }
-
 ```
 
 Este código compara a variável `level` com cada uma das constantes de enum possíveis no enum `Level`.
 
-Se um dos valores do enum ocorrer com mais frequência do que os outros, verificar esse valor na primeira instrução `if` resultará em um melhor desempenho, pois menos comparações serão executadas em média. No entanto, essa não é uma grande diferença, a menos que as comparações sejam executadas em grande quantidade.
+Se um dos valores do enum ocorrer com mais frequência do que os outros, verificar esse valor na primeira instrução `if` resultará em um melhor desempenho, pois menos comparações serão executadas em média. 
 
 ### Enums em Instruções switch
 
-Se os seus tipos enum do Java contiverem muitas constantes e você precisar verificar uma variável em relação aos valores, conforme mostrado na seção anterior, usar uma instrução `switch` do Java pode ser uma boa ideia.
+Se os seus tipos enum contiverem muitas constantes e você precisar verificar uma variável em relação aos valores, conforme mostrado na seção anterior, usar uma instrução `switch` é uma alternativa.
 
 Você pode usar enums em instruções switch desta forma:
 
@@ -73,14 +71,13 @@ switch (level) {
         // ... substitua por código a ser executado para o caso LOW
         break; 
 }
-
 ```
 
 Substitua o `...` pelo código a ser executado se a variável `level` corresponder ao valor da constante `Level` fornecido. O código pode ser uma operação simples em Java, uma chamada de método, etc.
 
 ### Iteração de Enum
 
-Você pode obter um array de todos os valores possíveis de um tipo enum do Java chamando seu método estático `values()`. Todos os tipos enum recebem um método estático `values()` automaticamente pelo compilador Java. Aqui está um exemplo de iteração de todos os valores de um enum:
+Você pode obter um array de todos os valores possíveis de um tipo enum do Java chamando seu método estático `values()`. Todos os tipos enum recebem um método estático `values()` automaticamente pelo compilador.Segue um exemplo:
 
 ```java
 // O método .values() retorna um array com todas as constantes do Enum na ordem em que foram declaradas
@@ -88,7 +85,6 @@ for (Level level : Level.values()) {
     // Imprime o nome de cada constante encontrada no Enum (ex: HIGH, MEDIUM, LOW)
     System.out.println(level);
 }
-
 ```
 
 A execução deste código Java imprimiria todos os valores do enum. Aqui está a saída:
@@ -97,10 +93,9 @@ A execução deste código Java imprimiria todos os valores do enum. Aqui está 
 HIGH
 MEDIUM
 LOW
-
 ```
 
-Observe como os próprios nomes das constantes são impressos. Esta é uma área em que os enums do Java são diferentes das constantes `static final`.
+Observe como os próprios nomes das constantes são impressos. 
 
 ### Enum toString()
 
@@ -109,7 +104,6 @@ Uma classe enum obtém automaticamente um método `toString()` na classe quando 
 ```java
 // O método .toString() converte a instância do Enum em sua representação textual exata ("HIGH")
 String levelText = Level.HIGH.toString();
-
 ```
 
 O valor da variável `levelText` após a execução da instrução acima será o texto `HIGH`.
@@ -124,7 +118,7 @@ System.out.println(Level.HIGH);
 
 ```
 
-Então o método `toString()` será chamado por baixo dos panos, de modo que o valor que será impresso é o nome textual da instância do enum. Em outras palavras, no exemplo acima, the texto `HIGH` teria sido impresso.
+Então o método `toString()` será chamado, de modo que o valor que será impresso é o nome textual da instância do enum. No exemplo acima, o texto `HIGH` será impresso.
 
 ### Enum valueOf()
 
@@ -141,7 +135,7 @@ A variável `level` apontará para `Level.HIGH` após a execução desta linha.
 
 ### Campos de Enum
 
-Você pode adicionar campos a um enum do Java. Assim, cada valor constante do enum recebe esses campos. Os valores dos campos devem ser fornecidos ao construtor do enum ao definir as constantes. Aqui está um exemplo:
+Você pode valores aos campos a um enum. Os valores dos campos devem ser fornecidos ao construtor do enum ao definir as constantes. Aqui está um exemplo:
 
 ```java
 public enum Level {
@@ -159,7 +153,6 @@ public enum Level {
         this.levelCode = levelCode; // Atribui o código recebido ao atributo da constante correspondente
     }
 }
-
 ```
 
 Observe como o enum do Java no exemplo acima possui um construtor que aceita um `int`. O construtor do enum define o campo `int`. Quando os valores constantes do enum são definidos, um valor `int` é passado para o construtor do enum.
