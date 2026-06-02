@@ -15,9 +15,9 @@ public enum Level {
 
 ```
 
-Observe a palavra-chave `enum`, que é usada no lugar de `class` ou `interface`. A palavra-chave `enum` do Java sinaliza para o compilador que essa definição de tipo é um enum.
+Observe a palavra-chave `enum`, que é usada no lugar de `class` ou `interface`. A palavra-chave `enum` do Java sinaliza para o compilador que essa declaração de tipo é um enum.
 
-Você pode se referir às constantes no enum acima desta forma:
+Podemos referenciar constantes no enum acima desta forma:
 
 ```java
 // Declaração de uma variável do tipo 'Level' recebendo a constante 'HIGH'
