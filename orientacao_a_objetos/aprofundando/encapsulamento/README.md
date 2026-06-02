@@ -2,7 +2,9 @@
 
 Encapsulamento é um dos quatro conceitos fundamentais de POO (Programação Orientada a Objetos). Os outros três são herança, polimorfismo e abstração.
 
-Encapsulamento em Java é um mecanismo de envolver os **dados** (variáveis) e o **código que age sobre esses dados** (métodos) juntos como uma única unidade. As variáveis de uma classe ficam ocultas de outras classes e só podem ser acessadas por meio dos métodos da própria classe — por isso o conceito também é chamado de **ocultação de dados** (*data hiding*).
+Encapsulamento em Java é o mecanismo que agrupa os dados (variáveis de instância) e os métodos que operam sobre esses dados em uma única unidade (a classe), ocultando os detalhes de implementação interna e protegendo os dados contra acessos indevidos.
+
+ As variáveis de uma classe ficam ocultas de outras classes e só podem ser acessadas por meio dos métodos da própria classe — por isso o conceito também é chamado de **ocultação de dados** (*data hiding*).
 
 Para implementar encapsulamento em Java:
 
