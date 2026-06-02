@@ -1,15 +1,18 @@
 # Enums
 
-Um Enum é um tipo especial do Java usado para definir coleções de constantes. Mais precisamente, um tipo enum do é um tipo especial de classe. Um enum pode conter constantes, métodos, etc. Os enums foram adicionados no Java 5.
+Um Enum é um tipo especial do Java usado para definir coleções de constantes. Mais precisamente, um tipo enum é um tipo especial de classe. Um enum pode conter constantes, métodos, etc. Os enums foram adicionados no Java 5.
 
 ### Exemplo de Enum
 
 ```java
+// Definição de um Enum chamado 'Level'
 public enum Level {
+    // Coleção de constantes disponíveis (por convenção, escritas em letras maiúsculas)
     HIGH,
     MEDIUM,
     LOW
 }
+
 ```
 
 Observe a palavra-chave `enum`, que é usada no lugar de `class` ou `interface`. A palavra-chave `enum` do Java sinaliza para o compilador que essa definição de tipo é um enum.
@@ -17,7 +20,9 @@ Observe a palavra-chave `enum`, que é usada no lugar de `class` ou `interface`.
 Você pode se referir às constantes no enum acima desta forma:
 
 ```java
+// Declaração de uma variável do tipo 'Level' recebendo a constante 'HIGH'
 Level level = Level.HIGH;
+
 ```
 
 Observe como a variável `level` é do tipo `Level`, que é o tipo enum do Java definido no exemplo acima. A variável `level` pode assumir uma das constantes do enum `Level` como valor (`HIGH`, `MEDIUM` ou `LOW`). Neste caso, `level` é definida como `HIGH`.
@@ -27,15 +32,18 @@ Observe como a variável `level` é do tipo `Level`, que é o tipo enum do Java 
 Como os enums do Java são constantes, você frequentemente terá que comparar uma variável que aponta para uma constante de enum com as constantes possíveis no tipo enum. Aqui está um exemplo de uso de um enum do Java em uma instrução `if`:
 
 ```java
-Level level = ... //assign some Level constant to it
+// Simulação: Variável 'level' inicializada com alguma das constantes existentes
+Level level = Level.MEDIUM; 
 
-if( level == Level.HIGH) {
-
-} else if( level == Level.MEDIUM) {
-
-} else if( level == Level.LOW) {
-
+// Comparação direta de enums utilizando o operador de igualdade referencial (==)
+if (level == Level.HIGH) {
+    // Código executado se a variável for igual à constante HIGH
+} else if (level == Level.MEDIUM) {
+    // Código executado se a variável for igual à constante MEDIUM
+} else if (level == Level.LOW) {
+    // Código executado se a variável for igual à constante LOW
 }
+
 ```
 
 Este código compara a variável `level` com cada uma das constantes de enum possíveis no enum `Level`.
@@ -49,13 +57,23 @@ Se os seus tipos enum do Java contiverem muitas constantes e você precisar veri
 Você pode usar enums em instruções switch desta forma:
 
 ```java
-Level level = ... //assign some Level constant to it
+// Simulação: Variável 'level' inicializada com alguma das constantes existentes
+Level level = Level.HIGH; 
 
+// O bloco switch avalia o valor contido na variável do tipo Enum
 switch (level) {
-    case HIGH   : ...; break;
-    case MEDIUM : ...; break;
-    case LOW    : ...; break;
+    // Nos 'cases', não é necessário (e nem permitido) utilizar o prefixo 'Level.'
+    case HIGH: 
+        // ... substitua por código a ser executado para o caso HIGH
+        break; // Interrompe a execução para não entrar nos blocos abaixo
+    case MEDIUM: 
+        // ... substitua por código a ser executado para o caso MEDIUM
+        break; 
+    case LOW: 
+        // ... substitua por código a ser executado para o caso LOW
+        break; 
 }
+
 ```
 
 Substitua o `...` pelo código a ser executado se a variável `level` corresponder ao valor da constante `Level` fornecido. O código pode ser uma operação simples em Java, uma chamada de método, etc.
@@ -65,9 +83,12 @@ Substitua o `...` pelo código a ser executado se a variável `level` correspond
 Você pode obter um array de todos os valores possíveis de um tipo enum do Java chamando seu método estático `values()`. Todos os tipos enum recebem um método estático `values()` automaticamente pelo compilador Java. Aqui está um exemplo de iteração de todos os valores de um enum:
 
 ```java
+// O método .values() retorna um array com todas as constantes do Enum na ordem em que foram declaradas
 for (Level level : Level.values()) {
+    // Imprime o nome de cada constante encontrada no Enum (ex: HIGH, MEDIUM, LOW)
     System.out.println(level);
 }
+
 ```
 
 A execução deste código Java imprimiria todos os valores do enum. Aqui está a saída:
@@ -76,6 +97,7 @@ A execução deste código Java imprimiria todos os valores do enum. Aqui está 
 HIGH
 MEDIUM
 LOW
+
 ```
 
 Observe como os próprios nomes das constantes são impressos. Esta é uma área em que os enums do Java são diferentes das constantes `static final`.
@@ -85,7 +107,9 @@ Observe como os próprios nomes das constantes são impressos. Esta é uma área
 Uma classe enum obtém automaticamente um método `toString()` na classe quando compilada. O método `toString()` retorna um valor de string com o nome da instância de enum fornecida. Aqui está um exemplo:
 
 ```java
+// O método .toString() converte a instância do Enum em sua representação textual exata ("HIGH")
 String levelText = Level.HIGH.toString();
+
 ```
 
 O valor da variável `levelText` após a execução da instrução acima será o texto `HIGH`.
@@ -95,17 +119,22 @@ O valor da variável `levelText` após a execução da instrução acima será o
 Se você imprimir um enum, assim:
 
 ```java
+// Passar o Enum diretamente para o println invoca implicitamente o método .toString() por baixo dos panos
 System.out.println(Level.HIGH);
+
 ```
 
-Então o método `toString()` será chamado por baixo dos panos, de modo que o valor que será impresso é o nome textual da instância do enum. Em outras palavras, no exemplo acima, o texto `HIGH` teria sido impresso.
+Então o método `toString()` será chamado por baixo dos panos, de modo que o valor que será impresso é o nome textual da instância do enum. Em outras palavras, no exemplo acima, the texto `HIGH` teria sido impresso.
 
 ### Enum valueOf()
 
 Uma classe enum obtém automaticamente um método estático `valueOf()` na classe quando compilada. O método `valueOf()` pode ser usado para obter uma instância da classe enum para um determinado valor de String. Aqui está um exemplo:
 
 ```java
+// O método estático .valueOf() faz o inverso: converte um texto String exato de volta na constante do Enum correspondente.
+// Nota: Se o texto passado não corresponder exatamente a uma constante (ex: "high"), lançará um IllegalArgumentException.
 Level level = Level.valueOf("HIGH");
+
 ```
 
 A variável `level` apontará para `Level.HIGH` após a execução desta linha.
@@ -116,17 +145,21 @@ Você pode adicionar campos a um enum do Java. Assim, cada valor constante do en
 
 ```java
 public enum Level {
-    HIGH  (3),  //calls constructor with value 3
-    MEDIUM(2),  //calls constructor with value 2
-    LOW   (1)   //calls constructor with value 1
-    ;           // semicolon needed when fields / methods follow
+    // Declaração das constantes do Enum invocando o construtor personalizado passando o inteiro correspondente
+    HIGH  (3),  // Chama o construtor passando o valor 3
+    MEDIUM(2),  // Chama o construtor passando o valor 2
+    LOW   (1)   // Chama o construtor passando o valor 1
+    ;           // O ponto e vírgula é OBRIGATÓRIO aqui porque há campos e construtores declarados abaixo das constantes
 
+    // Atributo interno privado e imutável para armazenar o código numérico de cada nível
     private final int levelCode;
 
+    // Construtor do Enum. Obrigatoriamente privado (private). Não é permitido usar construtores public ou protected.
     private Level(int levelCode) {
-        this.levelCode = levelCode;
+        this.levelCode = levelCode; // Atribui o código recebido ao atributo da constante correspondente
     }
 }
+
 ```
 
 Observe como o enum do Java no exemplo acima possui um construtor que aceita um `int`. O construtor do enum define o campo `int`. Quando os valores constantes do enum são definidos, um valor `int` é passado para o construtor do enum.
@@ -139,29 +172,35 @@ Você também pode adicionar métodos a um enum do Java. Aqui está um exemplo:
 
 ```java
 public enum Level {
-    HIGH  (3),  //calls constructor with value 3
-    MEDIUM(2),  //calls constructor with value 2
-    LOW   (1)   //calls constructor with value 1
-    ;           // semicolon needed when fields / methods follow
+    HIGH  (3),  // Chama o construtor passando o valor 3
+    MEDIUM(2),  // Chama o construtor passando o valor 2
+    LOW   (1)   // Chama o construtor passando o valor 1
+    ;           // Ponto e vírgula separando as constantes dos membros da classe
 
     private final int levelCode;
 
+    // Construtor privado interno
     Level(int levelCode) {
         this.levelCode = levelCode;
     }
 
+    // Método público comum (Getter) para expor e retornar o valor de 'levelCode' externamente
     public int getLevelCode() {
         return this.levelCode;
     }
 }
+
 ```
 
 Você chama um método de enum do Java por meio de uma referência a um dos valores constantes. Aqui está um exemplo de chamada de método de enum do Java:
 
 ```java
+// Atribui a constante HIGH para a variável 'level'
 Level level = Level.HIGH;
 
+// Executa o método público .getLevelCode() a partir da instância obtida e exibe no console (imprimirá 3)
 System.out.println(level.getLevelCode());
+
 ```
 
 Este código imprimiria o valor `3`, que é o valor do campo `levelCode` para a constante de enum `HIGH`.
@@ -174,27 +213,36 @@ Também é possível que uma classe enum do Java possua métodos abstratos. Se u
 
 ```java
 public enum Level {
+    // Cada constante passa a funcionar como uma espécie de classe anônima interna,
+    // sendo obrigada a abrir chaves e implementar o método abstrato declarado na classe pai do Enum.
     HIGH {
         @Override
         public String asLowerCase() {
+            // Implementação específica para a constante HIGH: converte seu nome para letras minúsculas ("high")
             return HIGH.toString().toLowerCase();
         }
     },
     MEDIUM {
         @Override
+        // Sobrescrita obrigatória do método abstrato
         public String asLowerCase() {
+            // Retorna "medium"
             return MEDIUM.toString().toLowerCase();
         }
     },
     LOW {
         @Override
+        // Sobrescrita obrigatória do método abstrato
         public String asLowerCase() {
+            // Retorna "low"
             return LOW.toString().toLowerCase();
         }
-    };
+    }; // Ponto e vírgula que sinaliza o final das declarações das constantes
 
+    // Assinatura do método abstrato. Todas as constantes acima são forçadas a fornecer sua própria implementação.
     public abstract String asLowerCase();
 }
+
 ```
 
 Observe a declaração do método abstrato na parte inferior da classe enum. Observe também como cada instância do enum (cada constante) define sua própria implementação desse método abstrato. O uso de um método abstrato é útil quando você precisa de uma implementação diferente de um método para cada instância de um enum do Java.
@@ -204,21 +252,27 @@ Observe a declaração do método abstrato na parte inferior da classe enum. Obs
 Um Enum do Java pode implementar uma Interface Java, caso você ache que isso faça sentido na sua situação. Aqui está um exemplo de um Enum do Java implementando uma interface:
 
 ```java
+// O Enum usa a cláusula padrão 'implements' para assinar o contrato com uma Interface Java
 public enum EnumImplementingInterface implements MyInterface {
+    // Definição das constantes enviando uma String descritiva para o construtor personalizado
     FIRST("First Value"),
     SECOND("Second Value");
 
+    // Atributo interno para armazenar o dado
     private String description = null;
 
+    // Construtor privado para inicialização do campo descritivo
     private EnumImplementingInterface(String desc){
         this.description = desc;
     }
 
+    // Sobrescrita obrigatória do método determinado pelo contrato da interface 'MyInterface'
     @Override
     public String getDescription() {
         return this.description;
     }
 }
+
 ```
 
 É o método `getDescription()` que vem da interface `MyInterface`.
@@ -230,7 +284,10 @@ A implementação de uma interface com um Enum pode ser usada para implementar u
 O Java contém uma implementação especial de `Set` chamada `EnumSet`, que pode armazenar enums de forma mais eficiente do que as implementações padrão de `Set` do Java. Aqui está como você cria uma instância de um `EnumSet`:
 
 ```java
+// O EnumSet usa internamente vetores de bits (bit vectors), o que o torna incrivelmente rápido e leve em memória.
+// O método estático .of() cria um conjunto contendo apenas as duas constantes fornecidas nos argumentos.
 EnumSet<Level> enumSet = EnumSet.of(Level.HIGH, Level.MEDIUM);
+
 ```
 
 Uma vez criado, você pode usar o `EnumSet` como qualquer outro `Set`.
@@ -240,13 +297,17 @@ Uma vez criado, você pode usar o `EnumSet` como qualquer outro `Set`.
 O Java também contém uma implementação especial de `Map` que pode usar instâncias de enum do Java como chaves. Aqui está um exemplo de `EnumMap` do Java:
 
 ```java
+// O EnumMap armazena chaves de um tipo Enum específico. É altamente otimizado e requer a passagem do tipo da classe (.class) em seu construtor.
 EnumMap<Level, String> enumMap = new EnumMap<Level, String>(Level.class);
 
+// Inserindo chaves do tipo Enum e associando a valores do tipo String comuns
 enumMap.put(Level.HIGH  , "High level");
 enumMap.put(Level.MEDIUM, "Medium level");
 enumMap.put(Level.LOW   , "Low level");
 
+// Recuperação de dados de forma extremamente performática passando a constante do Enum (retornará "High level")
 String levelValue = enumMap.get(Level.HIGH);
+
 ```
 
 ### Detalhes Diversos de Enum
