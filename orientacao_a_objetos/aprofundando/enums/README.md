@@ -1,12 +1,8 @@
-# Enums do Java
+# Enums
 
-Um Java Enum é um tipo especial do Java usado para definir coleções de constantes. Mais precisamente, um tipo enum do Java é um tipo especial de classe Java. Um enum pode conter constantes, métodos, etc. Os enums do Java foram adicionados no Java 5.
-
-Este tutorial de enum do Java explica como criar e usar um enum do Java.
+Um Enum é um tipo especial do Java usado para definir coleções de constantes. Mais precisamente, um tipo enum do é um tipo especial de classe. Um enum pode conter constantes, métodos, etc. Os enums foram adicionados no Java 5.
 
 ### Exemplo de Enum
-
-Aqui está um exemplo simples de enum do Java:
 
 ```java
 public enum Level {
@@ -16,7 +12,7 @@ public enum Level {
 }
 ```
 
-Observe a palavra-chave `enum`, que é usada no lugar de `class` ou `interface`. A palavra-chave `enum` do Java sinaliza para o compilador Java que essa definição de tipo é um enum.
+Observe a palavra-chave `enum`, que é usada no lugar de `class` ou `interface`. A palavra-chave `enum` do Java sinaliza para o compilador que essa definição de tipo é um enum.
 
 Você pode se referir às constantes no enum acima desta forma:
 
