@@ -1,6 +1,6 @@
 # Enums
 
-Um Enum é um tipo especial do Java usado para definir coleções de constantes. Mais precisamente, um tipo enum é um tipo especial de classe. Um enum pode conter constantes, métodos, etc. Os enums foram adicionados no Java 5.
+Um Enum é um tipo especial usado para definir coleções de constantes. Mais precisamente, um tipo enum é um tipo especial de classe. Um enum pode conter constantes, métodos, etc. Os enums foram adicionados no Java 5.
 
 ### Exemplo de Enum
 
