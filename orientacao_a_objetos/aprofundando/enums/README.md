@@ -185,7 +185,7 @@ public enum Level {
 
 ```
 
-Você chama um método de enum do Java por meio de uma referência a um dos valores constantes. Aqui está um exemplo de chamada de método de enum do Java:
+Você chama um método de enum do Java por meio de uma referência a um dos valores constantes. Aqui está um exemplo de chamada de método de enum:
 
 ```java
 // Atribui a constante HIGH para a variável 'level'
@@ -196,9 +196,9 @@ System.out.println(level.getLevelCode());
 
 ```
 
-Este código imprimiria o valor `3`, que é o valor do campo `levelCode` para a constante de enum `HIGH`.
+O código imprimirá o valor `3`, que é o valor do campo `levelCode` para a constante de enum `HIGH`.
 
-Você não está restrito a métodos getter e setter simples. Você também pode criar métodos que realizam cálculos com base nos valores dos campos da constante do enum. Se os seus campos não forem declarados como `final`, você poderá até modificar os valores dos campos (embora isso possa não ser uma ideia tão boa, considerando que os enums devem ser constantes).
+Você não está restrito a métodos getter e setter simples. É possível criar métodos que realizam cálculos com base nos valores dos campos da constante do enum. Se os seus campos não forem declarados como `final`, você poderá até modificar os valores dos campos (embora isso não seja uma boa prática, considerando que os enums devem ser constantes).
 
 ### Métodos Abstratos de Enum
 
@@ -238,11 +238,11 @@ public enum Level {
 
 ```
 
-Observe a declaração do método abstrato na parte inferior da classe enum. Observe também como cada instância do enum (cada constante) define sua própria implementação desse método abstrato. O uso de um método abstrato é útil quando você precisa de uma implementação diferente de um método para cada instância de um enum do Java.
+Observe a declaração do método abstrato na parte inferior da classe enum. Observe também como cada instância do enum (cada constante) define sua própria implementação desse método abstrato. O uso de um método abstrato é útil quando você precisa de uma implementação diferente de um método para cada instância de um enum.
 
 ### Enum Implementando Interface
 
-Um Enum do Java pode implementar uma Interface Java, caso você ache que isso faça sentido na sua situação. Aqui está um exemplo de um Enum do Java implementando uma interface:
+Um Enum pode implementar uma Interface, caso necessário. Segue um exemplo de um Enum implementando uma interface:
 
 ```java
 // O Enum usa a cláusula padrão 'implements' para assinar o contrato com uma Interface Java
@@ -270,11 +270,11 @@ public enum EnumImplementingInterface implements MyInterface {
 
 É o método `getDescription()` que vem da interface `MyInterface`.
 
-A implementação de uma interface com um Enum pode ser usada para implementar um conjunto de constantes `Comparator` diferentes que podem ser usadas para ordenar coleções de objetos. A ordenação de objetos no Java é explicada em mais detalhes no Tutorial de Ordenação de Coleções do Java (Java Collection Sorting Tutorial).
+A implementação de uma interface com um Enum pode ser usada para implementar um conjunto de constantes `Comparator` diferentes as quais podem ser usadas para ordenar coleções de objetos. A ordenação de objetos no Java será explicada em mais detalhes no Tutorial de Ordenação de Coleções do Java (Java Collection Sorting Tutorial).
 
 ### EnumSet
 
-O Java contém uma implementação especial de `Set` chamada `EnumSet`, que pode armazenar enums de forma mais eficiente do que as implementações padrão de `Set` do Java. Aqui está como você cria uma instância de um `EnumSet`:
+O Java contém uma implementação especial de `Set` chamada `EnumSet`, que pode armazenar enums de forma mais eficiente do que as implementações padrão de `Set` Aqui está como você cria uma instância de um `EnumSet`:
 
 ```java
 // O EnumSet usa internamente vetores de bits (bit vectors), o que o torna incrivelmente rápido e leve em memória.
@@ -287,7 +287,7 @@ Uma vez criado, você pode usar o `EnumSet` como qualquer outro `Set`.
 
 ### EnumMap
 
-O Java também contém uma implementação especial de `Map` que pode usar instâncias de enum do Java como chaves. Aqui está um exemplo de `EnumMap` do Java:
+O Java também contém uma implementação especial de `Map` que pode usar instâncias de enum como chaves. Segue um exemplo de `EnumMap`:
 
 ```java
 // O EnumMap armazena chaves de um tipo Enum específico. É altamente otimizado e requer a passagem do tipo da classe (.class) em seu construtor.
@@ -303,8 +303,4 @@ String levelValue = enumMap.get(Level.HIGH);
 
 ```
 
-### Detalhes Diversos de Enum
-
-Os enums do Java estendem a classe `java.lang.Enum` implicitamente, portanto, seus tipos enum não podem estender outra classe.
-
-Se um enum do Java contiver campos e métodos, a definição dos campos e métodos deve sempre vir após a lista de constantes no enum. Além disso, a lista de constantes do enum deve ser encerrada por um ponto e vírgula `;`.
+---
