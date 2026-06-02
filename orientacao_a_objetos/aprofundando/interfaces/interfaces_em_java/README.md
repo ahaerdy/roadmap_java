@@ -89,7 +89,7 @@ myInterface.sayHello();
 
 ## Implementando Múltiplas Interfaces
 
-Ao contrário das classes (que só herdam de uma), uma classe pode implementar quantas interfaces quiser. Basta listá-las após `implements`, separadas por vírgula:
+Ao contrário das classes (que só herdam de uma única superclasse), uma classe pode implementar quantas interfaces quiser. Basta listá-las após `implements`, separadas por vírgula:
 
 ```java
 // Esta classe assina dois contratos ao mesmo tempo:
