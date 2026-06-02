@@ -1,6 +1,6 @@
 # Interfaces em Java
 
-Uma interface Java define **o que** uma classe deve ser capaz de fazer, sem ditar **como** ela deve fazer. Tecnicamente, uma interface pode conter assinaturas de métodos, constantes e — a partir do Java 8 — implementações padrão (*default*).
+Uma interface define **o que** uma classe deve ser capaz de fazer, sem ditar **como** ela deve fazer. Tecnicamente, uma interface pode conter assinaturas de métodos, constantes e — a partir do Java 8 — implementações padrão (*default*).
 
 A assinatura de um método é composta pelo seu nome, seus parâmetros e as exceções que ele pode lançar. A interface declara essa "promessa de comportamento", e cada classe que a implementa é responsável por escrever o corpo desses métodos.
 
