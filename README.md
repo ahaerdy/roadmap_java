@@ -99,7 +99,7 @@ flowchart TD
 - [x] [Abstração](./orientacao_a_objetos/aprofundando/abstracao/)
     - [x] [Classes abstratas](./orientacao_a_objetos/aprofundando/abstracao/classes_abstratas/) ✓
     - [x] [Interfaces vs Calsses Abstratas](./orientacao_a_objetos/aprofundando/abstracao/interfaces_vs_classes_abstratas/) ✓
-- [ ] Encapsulamento
+- [x] [Encapsulamento](./orientacao_a_objetos/aprofundando/encapsulamento/)
 - [ ] Interfaces
 - [ ] Enums
 - [ ] Records
