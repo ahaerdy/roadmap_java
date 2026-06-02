@@ -4,7 +4,7 @@ Uma interface define **o que** uma classe deve ser capaz de fazer, sem ditar **c
 
 A assinatura de um método é composta pelo seu nome, seus parâmetros e as exceções que ele pode lançar. A interface declara essa "promessa de comportamento", e cada classe que a implementa é responsável por escrever o corpo desses métodos.
 
-Interfaces são o principal mecanismo de Java para alcançar o **polimorfismo**: ao referenciar um objeto pelo tipo da interface (em vez do tipo concreto da classe), o código fica desacoplado de implementações específicas.
+Interfaces são o principal mecanismo de Java para implementar o **polimorfismo**: ao referenciar um objeto pelo tipo da interface (em vez do tipo concreto da classe), o código fica desacoplado de implementações específicas.
 
 ---
 
