@@ -103,7 +103,7 @@ flowchart TD
 - [x] [Interfaces](./orientacao_a_objetos/aprofundando/interfaces/)
     - [x] [Interfaces em Java](./orientacao_a_objetos/aprofundando/interfaces/interfaces_em_java/) ✓
     - [x] [Guia para Inerfaces em Java](./orientacao_a_objetos/aprofundando/interfaces/guia_para_interfaces_em_java/) ✓
-- [ ] Enums
+- [x] [Enums](./orientacao_a_objetos/aprofundando/enums/)
 - [ ] Records
 - [ ] Method Chaining
 - [ ] Sobrecarga e Sobrescrita de Métodos
