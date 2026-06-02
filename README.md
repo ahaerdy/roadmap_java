@@ -99,8 +99,10 @@ flowchart TD
 - [x] [Abstração](./orientacao_a_objetos/aprofundando/abstracao/)
     - [x] [Classes abstratas](./orientacao_a_objetos/aprofundando/abstracao/classes_abstratas/) ✓
     - [x] [Interfaces vs Calsses Abstratas](./orientacao_a_objetos/aprofundando/abstracao/interfaces_vs_classes_abstratas/) ✓
-- [x] [Encapsulamento](./orientacao_a_objetos/aprofundando/encapsulamento/)
-- [ ] Interfaces
+- [x] [Encapsulamento](./orientacao_a_objetos/aprofundando/encapsulamento/) ✓
+- [x] [Interfaces](./orientacao_a_objetos/aprofundando/interfaces/)
+    - [x] [Interfaces em Java](./orientacao_a_objetos/aprofundando/interfaces/interfaces_em_java/)
+    - [x] [Guia para Inerfaces em Java](./orientacao_a_objetos/aprofundando/interfaces/guia_para_interfaces_em_java/)
 - [ ] Enums
 - [ ] Records
 - [ ] Method Chaining
