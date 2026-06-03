@@ -107,7 +107,6 @@ flowchart TD
 - [x] [Records](./orientacao_a_objetos/aprofundando/record/) ✓
 - [x] [Sobrecarga e Sobrescrita de Métodos](./orientacao_a_objetos/aprofundando/sobrecarga_e_sobrescrita_de_metodos/)
     - [x] [Sobrecarga Vs Sobrescrita](./orientacao_a_objetos/aprofundando/sobrecarga_e_sobrescrita_de_metodos/sobrecarga_vs_sobrescrita/)
-    - [x] [Tutorial sobre Herança](./orientacao_a_objetos/aprofundando/sobrecarga_e_sobrescrita_de_metodos/tutorial_sobre_heranca/)
 - [ ] Bloco Inicializador
 - [ ] Binding Estático vs Dinâmico
 - [ ] Passagem por Valor / Passagem por Referência

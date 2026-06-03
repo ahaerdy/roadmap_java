@@ -39,4 +39,4 @@ Para fixar de vez, veja a tabela comparativa abaixo:
 ## Veja também:
 
 - [Sobrecarga Vs Sobrescrita](./orientacao_a_objetos/aprofundando/sobrecarga_e_sobrescrita_de_metodos/sobrecarga_vs_sobrescrita/)
-- [Tutorial sobre Herança](./orientacao_a_objetos/aprofundando/sobrecarga_e_sobrescrita_de_metodos/tutorial_sobre_heranca/)
+- [Herança](./orientacao_a_objetos/aprofundando/heranca/)
