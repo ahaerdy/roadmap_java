@@ -56,7 +56,7 @@ public class PrimitivesUnitTest { // Declaração da classe de teste para tipos 
 
 ---
 
-### Passo a Passo da Execução
+### ✍️ Passo a Passo da Execução
 
 #### 1. Inicialização na Memória Stack
 
