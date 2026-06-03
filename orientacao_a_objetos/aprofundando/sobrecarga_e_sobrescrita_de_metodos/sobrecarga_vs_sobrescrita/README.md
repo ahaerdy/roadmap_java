@@ -1,4 +1,10 @@
+# Sobrecarga Vs Sobrescrita de Métodos
+
 Entender a diferença entre **Overriding (Sobrescrita)** e **Overloading (Sobrecarga)** é essencial para dominar a Programação Orientada a Objetos (POO) em Java. Ambos são pilhas do **Polimorfismo**, mas funcionam em momentos e contextos completamente diferentes.
+
+<p align="center">
+  <img src="000-Midia_e_Anexos/2026-06-03-13-16-30.png" alt="" width="1024">
+</p>
 
 Vamos analisar esses conceitos de forma prática e extremamente didática.
 
