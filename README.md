@@ -2,6 +2,8 @@
 
 Trilha de estudos estruturada para formação de um Desenvolvedor Java, documentada em português. Baseada no [roadmap.sh/java](https://roadmap.sh/java) como referência inicial, com **organização e conteúdo próprios**.
 
+![Java Roadmap](https://capsule-render.vercel.app/api?type=waving&color=auto&height=250&section=header&text=Java%20Roadmap&fontSize=70&animation=fadeIn)
+
 ## 🗺️ Visão Geral da Trilha
 
 O roadmap é dividido em **9 grandes etapas**, percorridas de forma sequencial:
