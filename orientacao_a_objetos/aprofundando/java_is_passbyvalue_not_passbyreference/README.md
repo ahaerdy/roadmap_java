@@ -54,6 +54,58 @@ public class PrimitivesUnitTest { // Declaração da classe de teste para tipos 
 }
 ```
 
+---
+
+### Passo a Passo da Execução
+
+#### 1. Inicialização na Memória Stack
+
+```java
+int x = 1;
+int y = 2;
+
+```
+
+* O Java aloca um espaço na memória *Stack* dedicado a este método de teste.
+* Ele cria duas variáveis locais: `x` (armazenando o valor `1`) e `y` (armazenando o valor `2`).
+* Os métodos `assertEquals(x, 1);` e `assertEquals(y, 2);` servem apenas para checar e garantir que, neste momento, os valores são exatamente esses.
+
+#### 2. A Invocação do Método (O Ponto Crítico)
+
+```java
+modify(x, y);
+
+```
+
+* Aqui ocorre a mágica do *Pass-by-Value*. O Java **não** passa as variáveis `x` e `y` reais para o método `modify`.
+* Em vez disso, ele lê os valores dentro delas (`1` e `2`), duplica esses valores e os entrega para o método `modify`.
+* Na memória *Stack*, em um escopo totalmente novo e isolado para o método `modify`, são criadas as variáveis `x1` (recebendo a cópia `1`) e `y1` (recebendo a cópia `2`).
+
+#### 3. A Alteração Isolada
+
+```java
+x1 = 5;
+y1 = 10;
+
+```
+
+* Dentro do método `modify`, os valores de `x1` e `y1` são alterados para `5` e `10`.
+* Essa alteração ocorre exclusivamente nas cópias locais. As variáveis originais `x` e `y`, que estão no escopo do método de teste, permanecem intocadas e seguras em seu próprio canto da memória.
+* Assim que o método `modify` chega ao fim, o escopo dele é destruído, e as variáveis `x1` e `y1` deixam de existir.
+
+#### 4. A Verificação Final
+
+```java
+assertEquals(x, 1);
+assertEquals(y, 2);
+
+```
+
+* De volta ao método principal, o JUnit verifica se `x` continua sendo `1` e se `y` continua sendo `2`.
+* Como a resposta é sim, o teste passa com sucesso, provando empiricamente que o método externo não conseguiu afetar os escopos originais.
+
+---
+
 Os argumentos em Java são sempre passados por valor (*passed-by-value*). Durante a invocação do método, uma cópia de cada argumento, seja ele um valor ou uma referência, é criada na memória stack, a qual é então passada para o método.
 
 No caso de primitivos, o valor é simplesmente copiado dentro da memória stack e depois passado para o método chamado; no caso de não primitivos, uma referência na memória stack aponta para os dados reais que residem na heap. Quando passamos um objeto, a referência na memória stack é copiada e a nova referência é passada para o método.
