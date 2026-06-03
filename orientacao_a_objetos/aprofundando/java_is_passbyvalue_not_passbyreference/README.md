@@ -29,6 +29,31 @@ Isso significa que, quando uma variável é por referência, o identificador exc
 ## 3. Passagem de Parâmetros em Java
 Os conceitos fundamentais em qualquer linguagem de programação são “valores” e “referências”. Em Java, as variáveis Primitivas armazenam os valores reais, enquanto as Não Primitivas armazenam as variáveis de referência que apontam para os endereços dos objetos aos quais estão se referindo. Tanto os valores quanto as referências são armazenados na memória stack.
 
+```java
+public class PrimitivesUnitTest { // Declaração da classe de teste para tipos primitivos
+    @Test // Anotação que indica que este método é um caso de teste do JUnit
+    public void whenModifyingPrimitives_thenOriginalValuesNotModified() {
+        int x = 1; // Inicializa a variável primitiva x com o valor 1 na memória stack
+        int y = 2; // Inicializa a variável primitiva y com o valor 2 na memória stack
+        
+        // Antes da Modificação
+        assertEquals(x, 1); // Verifica se o valor de x é igual a 1
+        assertEquals(y, 2); // Verifica se o valor de y é igual a 2
+        
+        modify(x, y); // Chama o método passando cópias dos valores de x e y
+        
+        // Após a Modificação
+        assertEquals(x, 1); // Verifica se o x original permaneceu inalterado (igual a 1)
+        assertEquals(y, 2); // Verifica se o y original permaneceu inalterado (igual a 2)
+    }
+    
+    public static void modify(int x1, int y1) { // Recebe as cópias dos valores em novas variáveis locais da stack
+        x1 = 5; // Modifica apenas a variável local x1 para 5; não afeta o x original
+        y1 = 10; // Modifica apenas a variável local y1 para 10; não afeta o y original
+    }
+}
+```
+
 Os argumentos em Java são sempre passados por valor (*passed-by-value*). Durante a invocação do método, uma cópia de cada argumento, seja ele um valor ou uma referência, é criada na memória stack, a qual é então passada para o método.
 
 No caso de primitivos, o valor é simplesmente copiado dentro da memória stack e depois passado para o método chamado; no caso de não primitivos, uma referência na memória stack aponta para os dados reais que residem na heap. Quando passamos um objeto, a referência na memória stack é copiada e a nova referência é passada para o método.
@@ -49,13 +74,13 @@ public class PrimitivesUnitTest { // Declaração da classe de teste para tipos 
         int x = 1; // Inicializa a variável primitiva x com o valor 1 na memória stack
         int y = 2; // Inicializa a variável primitiva y com o valor 2 na memória stack
         
-        // Antes da Modificação (Tradução do comentário original)
+        // Antes da Modificação
         assertEquals(x, 1); // Verifica se o valor de x é igual a 1
         assertEquals(y, 2); // Verifica se o valor de y é igual a 2
         
         modify(x, y); // Chama o método passando cópias dos valores de x e y
         
-        // Após a Modificação (Tradução do comentário original)
+        // Após a Modificação
         assertEquals(x, 1); // Verifica se o x original permaneceu inalterado (igual a 1)
         assertEquals(y, 2); // Verifica se o y original permaneceu inalterado (igual a 2)
     }
@@ -93,13 +118,13 @@ public class NonPrimitivesUnitTest { // Declaração da classe de teste para tip
         Foo a = new Foo(1); // Cria um novo objeto Foo na heap e armazena sua referência na variável 'a' da stack
         Foo b = new Foo(1); // Cria outro objeto Foo na heap e armazena sua referência na variável 'b' da stack
         
-        // Antes da Modificação (Tradução do comentário original)
+        // Antes da Modificação
         assertEquals(a.num, 1); // Verifica se o atributo 'num' do objeto apontado por 'a' é igual a 1
         assertEquals(b.num, 1); // Verifica se o atributo 'num' do objeto apontado por 'b' é igual a 1
         
         modify(a, b); // Chama o método passando cópias das variáveis de referência 'a' e 'b'
         
-        // Após a Modificação (Tradução do comentário original)
+        // Após a Modificação
         assertEquals(a.num, 2); // Verifica se 'a.num' mudou para 2, pois o objeto na heap foi alterado através de sua referência
         assertEquals(b.num, 1); // Verifica se 'b.num' continua 1, pois a variável original 'b' ainda aponta para o mesmo objeto
     }
