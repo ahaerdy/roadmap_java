@@ -4,6 +4,7 @@ Entender a diferença entre **Overriding (Sobrescrita)** e **Overloading (Sobrec
 
 <p align="center">
   <img src="000-Midia_e_Anexos/2026-06-03-13-16-30.png" alt="" width="1024">
+  <p align="center">Captura de tela de código Java com setas apontando para instâncias onde a sobrecarga e a sobrescrita estão ocorrendo.</p>
 </p>
 
 Vamos analisar esses conceitos de forma prática e extremamente didática.
