@@ -104,9 +104,10 @@ flowchart TD
     - [x] [Interfaces em Java](./orientacao_a_objetos/aprofundando/interfaces/interfaces_em_java/) ✓
     - [x] [Guia para Inerfaces em Java](./orientacao_a_objetos/aprofundando/interfaces/guia_para_interfaces_em_java/) ✓
 - [x] [Enums](./orientacao_a_objetos/aprofundando/enums/) ✓
-- [x] [Records](./orientacao_a_objetos/aprofundando/record/)
-- [ ] Method Chaining
-- [ ] Sobrecarga e Sobrescrita de Métodos
+- [x] [Records](./orientacao_a_objetos/aprofundando/record/) ✓
+- [x] [Sobrecarga e Sobrescrita de Métodos](./orientacao_a_objetos/aprofundando/sobrecarga_e_sobrescrita_de_metodos/)
+    - [x] [Sobrecarga versus Sobrescrita](./orientacao_a_objetos/aprofundando/sobrecarga_e_sobrescrita_de_metodos/sobrecarga_vs_sobrescrita/)
+    - [x] [Tutorial sobre Herança](./orientacao_a_objetos/aprofundando/sobrecarga_e_sobrescrita_de_metodos/tutorial_sobre_heranca/)
 - [ ] Bloco Inicializador
 - [ ] Binding Estático vs Dinâmico
 - [ ] Passagem por Valor / Passagem por Referência
