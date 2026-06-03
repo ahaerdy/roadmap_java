@@ -1,4 +1,4 @@
-## Blocos de Inicialização no Java (*Initializer Blocks*)
+# Blocos Inicializadores em Java (*Initializer Blocks*)
 
 Se você achava que o construtor era o único responsável por preparar seus objetos no Java, conheça os **Blocos de Inicialização**.
 
@@ -8,7 +8,7 @@ Existem dois tipos principais, e a diferença entre eles está no *momento* em q
 
 ---
 
-### 1. Bloco de Inicialização de Instância (*Instance Initializer Block*)
+## 1. Bloco de Inicialização de Instância (*Instance Initializer Block*)
 
 Este bloco roda **toda vez que você cria um novo objeto** (uma instância) da classe.
 
@@ -29,7 +29,7 @@ class Exemplo {
 
 ```
 
-### 2. Bloco de Inicialização Estático (*Static Initializer Block*)
+## 2. Bloco de Inicialização Estático (*Static Initializer Block*)
 
 Este bloco é acompanhado pela palavra-chave `static` e serve para a classe como um todo, não para os objetos individualmente.
 
@@ -48,7 +48,7 @@ class Exemplo {
 
 ---
 
-### A Linha do Tempo da Execução
+## A Linha do Tempo da Execução
 
 Para não confundir a ordem em que o Java executa as coisas, guarde esta sequência sempre que uma classe é utilizada pela primeira vez:
 
