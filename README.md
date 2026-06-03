@@ -3,7 +3,7 @@
 Trilha de estudos estruturada para formação de um Desenvolvedor Java, documentada em português. Baseada no [roadmap.sh/java](https://roadmap.sh/java) como referência inicial, com **organização e conteúdo próprios**.
 
 <p align="center">
-  <img src="000-Midia_e_Anexos/2026-06-03-14-03-32.png" alt="" width="100%">
+  <img src="000-Midia_e_Anexos/2026-06-03-14-06-04.png" alt="" width="100%">
 </p>
 
 ## 🗺️ Visão Geral da Trilha
