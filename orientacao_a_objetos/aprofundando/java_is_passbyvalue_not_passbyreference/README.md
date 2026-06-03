@@ -65,34 +65,6 @@ A Linguagem de Programação Java apresenta oito tipos de dados primitivos. As v
 
 O tempo de vida desses parâmetros formais dura apenas enquanto esse método estiver em execução e, ao retornar, esses argumentos formais são eliminados da stack e descartados.
 
-Vamos tentar entender isso com a ajuda de um exemplo de código:
-
-```java
-public class PrimitivesUnitTest { // Declaração da classe de teste para tipos primitivos
-    @Test // Anotação que indica que este método é um caso de teste do JUnit
-    public void whenModifyingPrimitives_thenOriginalValuesNotModified() {
-        int x = 1; // Inicializa a variável primitiva x com o valor 1 na memória stack
-        int y = 2; // Inicializa a variável primitiva y com o valor 2 na memória stack
-        
-        // Antes da Modificação
-        assertEquals(x, 1); // Verifica se o valor de x é igual a 1
-        assertEquals(y, 2); // Verifica se o valor de y é igual a 2
-        
-        modify(x, y); // Chama o método passando cópias dos valores de x e y
-        
-        // Após a Modificação
-        assertEquals(x, 1); // Verifica se o x original permaneceu inalterado (igual a 1)
-        assertEquals(y, 2); // Verifica se o y original permaneceu inalterado (igual a 2)
-    }
-    
-    public static void modify(int x1, int y1) { // Recebe as cópias dos valores em novas variáveis locais da stack
-        x1 = 5; // Modifica apenas a variável local x1 para 5; não afeta o x original
-        y1 = 10; // Modifica apenas a variável local y1 para 10; não afeta o y original
-    }
-}
-
-```
-
 Vamos tentar entender as asserções no programa acima analisando como esses valores são armazenados na memória:
 
 * As variáveis “x” e “y” no método principal são tipos primitivos e seus valores são armazenados diretamente na memória stack.
