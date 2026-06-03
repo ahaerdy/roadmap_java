@@ -187,13 +187,123 @@ class Foo { // Definição da classe auxiliar de suporte para os testes controla
 
 ```
 
-Vamos analisar as asserções no programa acima. Passamos os objetos `a` e `b` no método `modify()` que têm o mesmo valor inicial 1. Inicialmente, essas referências de objeto estão apontando para dois locais de objetos distintos em um espaço heap.
+---
 
-Quando essas referências `a` e `b` são passadas no método `modify()`, ele cria cópias espelhadas daquelas referências para `a1` e `b1` que apontam, inicialmente, para os mesmos objetos antigos.
+### ✍️ Passo a Passo da Execução
 
-No método `modify()`, quando modificamos um atributo interno através da referência `a1`, isso altera o objeto que reside na heap. No entanto, para a referência `b1`, atribuímos um novo objeto com a palavra-chave `new`. Portanto, a variável local de escopo `b1` passa a apontar para um local inédito na memória heap.
+#### Passo 1: Inicialização dos Objetos na Memória
 
-Qualquer alteração feita em `b1` a partir desse ponto não refletirá absolutamente nada no objeto associado à referência original `b`.
+```java
+Foo a = new Foo(1);
+Foo b = new Foo(1);
+
+```
+
+Aqui, o Java faz duas operações distintas para cada linha:
+
+1. **Na Heap:** Cria dois objetos do tipo `Foo` em locais diferentes da memória. Ambos são inicializados com o atributo `num = 1`. Suponhamos ficticiamente que o objeto de `a` foi criado no endereço `0xAAA` e o de `b` no endereço `0xBBB`.
+2. **Na Stack (Escopo do Teste):** Cria as variáveis locais `a` e `b`. O valor guardado dentro delas não é o objeto em si, mas sim os endereços: `a` guarda `0xAAA` e `b` guarda `0xBBB`.
+
+#### Passo 2: Assegurando o Estado Inicial
+
+```java
+assertEquals(a.num, 1);
+assertEquals(b.num, 1);
+
+```
+
+O JUnit olha para onde `a` (`0xAAA`) e `b` (`0xBBB`) estão apontando na Heap e verifica o valor de `num`. Como ambos são `1`, as asserções passam com sucesso.
+
+---
+
+#### Passo 3: A Invocação do Método (A Cópia das Referências)
+
+```java
+modify(a, b);
+
+```
+
+Este é o ponto crucial. Por ser *Pass-by-Value*, o Java cria um **novo frame na memória Stack** para o método `modify` e faz cópias exatas dos valores passados:
+
+* A variável local `a1` (do método `modify`) recebe uma cópia do valor de `a` (`0xAAA`).
+* A variável local `b1` (do método `modify`) recebe uma cópia do valor de `b` (`0xBBB`).
+
+> **Estado atual da Heap:** `a1` aponta para o mesmíssimo objeto que `a`, e `b1` aponta para o mesmíssimo objeto que `b`.
+
+---
+
+#### Passo 4: A Mutação através da Referência Compartilhada
+
+```java
+a1.num++;
+
+```
+
+O método acessa o endereço guardado em `a1` (`0xAAA`) na Heap e incrementa o atributo `num`.
+
+* O `num` do objeto no endereço `0xAAA` passa a ser **2**.
+* Como a variável original `a` também aponta para `0xAAA`, essa alteração ficará visível para ela quando o método terminar.
+
+---
+
+#### Passo 5: A Redirecionamento da Cópia Local
+
+```java
+b1 = new Foo(1);
+
+```
+
+Aqui o comportamento de `a1` e `b1` se diverge completamente:
+
+1. **Na Heap:** O Java cria um **terceiro** objeto `Foo` em um novo endereço (vamos chamá-lo de `0xCCC`), com `num = 1`.
+2. **Na Stack:** A variável local `b1` é atualizada. Ela deixa de guardar `0xBBB` e passa a guardar `0xCCC`.
+
+> ⚠️ **Atenção:** A variável original `b` na stack do teste continua guardando `0xBBB`. Ela não foi alterada e nem sabe que `b1` agora aponta para outro lugar.
+
+---
+
+#### Passo 6: Alteração no Novo Objeto Isolado
+
+```java
+b1.num++;
+
+```
+
+O método acessa o endereço atual de `b1` (`0xCCC`) na Heap e incrementa seu `num` para **2**.
+
+* O objeto original em `0xBBB` (apontado por `b`) permanece com o valor `num = 1` intacto.
+
+---
+
+#### Passo 7: Fim do Método e Destruição do Escopo
+
+Assim que a execução do método `modify` termina, o frame dele na memória Stack é **destruído**. As variáveis locais `a1` e `b1` deixam de existir. O objeto criado no endereço `0xCCC` agora está isolado na Heap e eventualmente será limpo pelo *Garbage Collector*.
+
+Voltamos para o escopo principal do método de teste.
+
+---
+
+#### Passo 8: Verificação Final (O Resultado do Teste)
+
+```java
+assertEquals(a.num, 2); // Passa!
+assertEquals(b.num, 1); // Passa!
+
+```
+
+* `a.num`: O teste olha para o endereço de `a` (`0xAAA`), cujo objeto foi modificado no Passo 4. O valor é `2`. O teste passa.
+* `b.num`: O teste olha para o endereço de `b` (`0xBBB`). Como `b` nunca saiu do endereço original e o objeto contido ali nunca foi alterado, o valor continua sendo `1`. O teste passa.
+
+#### 📌 Resumo
+
+| Variável | Endereço Inicial | Objeto Alterado? | Endereço Final | Valor de `.num` Final |
+| --- | --- | --- | --- | --- |
+| **`a`** (Teste) | `0xAAA` | **Sim** (via `a1`) | `0xAAA` | **2** |
+| **`b`** (Teste) | `0xBBB` | **Não** | `0xBBB` | **1** |
+| *`a1`* (Método) | `0xAAA` | Mudar objeto em `0xAAA` | `0xAAA` | *(Destruída)* |
+| *`b1`* (Método) | `0xBBB` | Reatribuída para `0xCCC` | `0xCCC` | *(Destruída)* |
+
+---
 
 ## 4. Conclusão
 
