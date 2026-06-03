@@ -1,7 +1,3 @@
-Aqui está o texto completo revisado, com a inclusão dos respectivos imports do JUnit 5 e comentários inline detalhados em todas as estruturas do código Java.
-
----
-
 # Passagem por Valor
 
 **(Como um Mecanismo de Passagem de Parâmetros em Java)**
