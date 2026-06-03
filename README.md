@@ -110,7 +110,7 @@ flowchart TD
 - [x] [Blocos Inicializadores](./orientacao_a_objetos/aprofundando/blocos_de_inicializacao/)
     - [x] [Blocos Inicializadores Estáticos e de Instância](./orientacao_a_objetos/aprofundando/blocos_de_inicializacao/blocos_inicializadores_estaticos_e_de_instancia/) ✓
     - [x] [Tudo Sobre Blocos Inicializadores de Instância](./orientacao_a_objetos/aprofundando/blocos_de_inicializacao/tudo_sobre_blocos_inicializadores_de_instancia/) ✓
-- [x] [Passagem por Valor](./orientacao_a_objetos/aprofundando/java_is_passbyvalue_not_passbyreference/)
+- [x] [Passagem por Valor](./orientacao_a_objetos/aprofundando/java_is_passbyvalue_not_passbyreference/) ✓
 
 **Recursos Modernos**
 - [ ] Tratamento de Exceções
