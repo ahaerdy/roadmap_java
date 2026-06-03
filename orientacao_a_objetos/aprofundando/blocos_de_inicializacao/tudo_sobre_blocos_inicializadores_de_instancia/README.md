@@ -1,4 +1,4 @@
-# Tudo sobre os blocos inicializadores de instância do Java
+# Tudo sobre os blocos inicializadores de instância
 
 O Java pode inicializar campos durante a criação de objetos usando blocos inicializadores de instância.
 
