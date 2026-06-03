@@ -55,3 +55,8 @@ Para não confundir a ordem em que o Java executa as coisas, guarde esta sequên
 1. **Bloco Estático:** Roda quando a classe é carregada (uma única vez).
 2. **Bloco de Instância:** Roda sempre que um `new` é chamado (antes do construtor).
 3. **Construtor:** Finaliza a criação do objeto.
+
+## Veja também
+
+- [Blocos Inicializadores Estáticos e de Instância](./orientacao_a_objetos/aprofundando/blocos_de_inicializacao/blocos_inicializadores_estaticos_e_de_instancia/) ✓
+- [Tudo Sobre Blocos Inicializadores de Instância](./orientacao_a_objetos/aprofundando/blocos_de_inicializacao/tudo_sobre_blocos_inicializadores_de_instancia/) ✓

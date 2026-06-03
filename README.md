@@ -110,8 +110,6 @@ flowchart TD
 - [x] [Blocos Inicializadores](./orientacao_a_objetos/aprofundando/blocos_de_inicializacao/)
     - [x] [Blocos Inicializadores Estáticos e de Instância](./orientacao_a_objetos/aprofundando/blocos_de_inicializacao/blocos_inicializadores_estaticos_e_de_instancia/) ✓
     - [x] [Tudo Sobre Blocos Inicializadores de Instância](./orientacao_a_objetos/aprofundando/blocos_de_inicializacao/tudo_sobre_blocos_inicializadores_de_instancia/) ✓
-    - [x] [O que é um Bloco Inicializador](./orientacao_a_objetos/aprofundando/blocos_de_inicializacao/o_que_e_um_bloco_inicializador/) ✓
-- [ ] Binding Estático vs Dinâmico
 - [ ] Passagem por Valor / Passagem por Referência
 
 **Recursos Modernos**
