@@ -1,6 +1,6 @@
 # ☕ Roadmap Java
 
-Trilha de estudos estruturada para formação em desenvolvimento Java, documentada em português. Baseada no [roadmap.sh/java](https://roadmap.sh/java) como referência inicial, com **organização e conteúdo próprios**.
+Trilha de estudos estruturada para formação de um Desenvolvedor Java, documentada em português. Baseada no [roadmap.sh/java](https://roadmap.sh/java) como referência inicial, com **organização e conteúdo próprios**.
 
 ## 🗺️ Visão Geral da Trilha
 
