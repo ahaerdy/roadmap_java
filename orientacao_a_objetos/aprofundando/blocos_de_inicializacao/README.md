@@ -1,4 +1,4 @@
-# Blocos Inicializadores em Java (*Initializer Blocks*)
+# Blocos Inicializadores (*Initializer Blocks*)
 
 Se você achava que o construtor era o único responsável por preparar seus objetos no Java, conheça os **Blocos de Inicialização**.
 
