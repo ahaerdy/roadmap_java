@@ -1,10 +1,6 @@
 # Tudo sobre os blocos inicializadores de instância do Java
 
-**27 de abril de 2023**
-
 O Java pode inicializar campos durante a criação de objetos usando blocos inicializadores de instância.
-
-*[Este artigo foi adaptado do livro OCP Oracle Certified Professional Java SE 17 Developer (Exam 1Z0-829) Programmer's Guide, publicado pela Oracle Press. —Ed.]*
 
 Os inicializadores podem ser usados para definir valores iniciais para campos em objetos e classes. Existem três tipos de inicializadores:
 
@@ -148,11 +144,3 @@ b: 10
 ## Tratamento de exceções em blocos inicializadores de instância
 
 O tratamento de exceções em blocos inicializadores de instância é semelhante ao de blocos inicializadores estáticos. No entanto, o tratamento de exceções em blocos inicializadores de instância difere daquele em blocos inicializadores estáticos no seguinte aspecto: A execução de um bloco inicializador de instância pode resultar em uma exceção verificada (checked exception) não capturada, desde que a exceção seja declarada na cláusula `throws` de cada construtor da classe. Os blocos inicializadores estáticos não podem permitir isso, pois nenhum construtor está envolvido na inicialização da classe. Os blocos inicializadores de instância em classes anônimas têm uma liberdade ainda maior: eles podem lançar qualquer exceção.
-
-## Autores
-
-**Vasily Strelnikov**
-Vasily Strelnikov é especialista principal sênior em soluções OCI na Oracle; anteriormente, ele foi consultor de treinamento principal sênior. As especialidades de Strelnikov são design e integração de sistemas usando arquitetura orientada a serviços (SOA), Service Component Architecture (SCA) e Java; ele criou cursos de treinamento para Java e Java EE. Ele reside em Londres.
-
-**Khalid Mughal**
-Khalid A. Mughal é professor associado (emérito) no Departamento de Informática da Universidade de Bergen, Noruega. Durante sua extensa carreira, ele projetou e implementou muitos cursos sobre Java, desenvolvimento de sistemas orientados a objetos, desenvolvimento de aplicações web, segurança de software e técnicas de compiladores. Mughal ministrou seminários para a indústria de TI e é o autor principal de vários livros sobre Java.
