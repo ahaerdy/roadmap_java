@@ -24,7 +24,7 @@ Para que a sobrescrita aconteça, a assinatura do método (nome e parâmetros) d
 
 ---
 
-### Resumo Comparativo: Não confunda mais!
+### Resumo Comparativo: 
 
 Para fixar de vez, veja a tabela comparativa abaixo:
 
@@ -35,3 +35,8 @@ Para fixar de vez, veja a tabela comparativa abaixo:
 | **Argumentos/Parâmetros** | **Obrigatoriamente diferentes** (em número, tipo ou ordem). | **Obrigatoriamente iguais**. |
 | **Comportamento** | Cria um método novo (com outro propósito). | Modifica o comportamento de um método herdado. |
 | **Momento da definição** | Em tempo de compilação (*Static Binding*). | Em tempo de execução (*Dynamic Binding*). |
+
+## Veja também:
+
+- [Sobrecarga Vs Sobrescrita](./orientacao_a_objetos/aprofundando/sobrecarga_e_sobrescrita_de_metodos/sobrecarga_vs_sobrescrita/)
+- [Tutorial sobre Herança](./orientacao_a_objetos/aprofundando/sobrecarga_e_sobrescrita_de_metodos/tutorial_sobre_heranca/)
