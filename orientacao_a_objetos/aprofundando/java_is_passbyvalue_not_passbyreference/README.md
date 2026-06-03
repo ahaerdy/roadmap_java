@@ -74,8 +74,6 @@ Vamos tentar entender as asserções no programa acima analisando como esses val
 * Quando chamamos o método `modify()`, uma cópia exata de cada uma dessas variáveis é criada e armazenada em um local diferente na memória stack.
 * Qualquer modificação nessas cópias afeta apenas a elas e deixa as variáveis originais inalteradas.
 
-baeldung - pass by value - passing primitives
-
 ### 3.2. Passando Referências de Objeto
 
 Em Java, todos os objetos são armazenados dinamicamente no espaço Heap nos bastidores. Esses objetos são referenciados a partir de referências chamadas variáveis de referência.
@@ -125,17 +123,11 @@ class Foo { // Definição da classe auxiliar Foo usado nos testes
 
 Vamos analisar as asserções no programa acima. Passamos os objetos `a` e `b` no método `modify()` que têm o mesmo valor 1. Inicialmente, essas referências de objeto estão apontando para dois locais de objetos donuts em um espaço heap:
 
-baeldung - pass by value - passing primitives - initial
-
 Quando essas referências `a` e `b` são passadas no método `modify()`, ele cria cópias espelhadas daquelas referências `a1` e `b1` que apontam para os mesmos objetos antigos:
-
-baeldung - pass by value - passing primitives - before method ca
 
 No método `modify()`, quando modificamos a referência `a1`, isso altera o objeto original. No entanto, para uma referência `b1`, atribuímos um novo objeto. Portanto, ela agora está apontando para um novo objeto na memória heap.
 
 Qualquer alteração feita em `b1` não refletirá nada no objeto original:
-
-baeldung - pass by value - passing primitives - after method cal
 
 ## 4. Conclusão
 
