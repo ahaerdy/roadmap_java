@@ -108,6 +108,9 @@ flowchart TD
 - [x] [Sobrecarga e Sobrescrita de Métodos](./orientacao_a_objetos/aprofundando/sobrecarga_e_sobrescrita_de_metodos/)
     - [x] [Sobrecarga Vs Sobrescrita](./orientacao_a_objetos/aprofundando/sobrecarga_e_sobrescrita_de_metodos/sobrecarga_vs_sobrescrita/) ✓
 - [x] [Blocos Inicializadores](./orientacao_a_objetos/aprofundando/blocos_de_inicializacao/)
+    - [x] [Blocos Inicializadores Estáticos e de Instância](./orientacao_a_objetos/aprofundando/blocos_de_inicializacao/blocos_inicializadores_estaticos_e_de_instancia/)
+    - [x] [Tudo Sobre Blocos Inicializadores de Instância]
+    - [x] [O que é um Bloco Inicializador]
 - [ ] Binding Estático vs Dinâmico
 - [ ] Passagem por Valor / Passagem por Referência
 
