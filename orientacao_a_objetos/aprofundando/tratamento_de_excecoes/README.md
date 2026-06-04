@@ -213,6 +213,8 @@ public class ExemploCustomizado {
 
 ## 4. Boas Práticas Rápidas
 
-> ⚠️ **Evite blocos catch vazios:** Capturar exceções (`catch (Exception e) {}`) esconde bugs e torna a manutenção impossível. No mínimo, registre o erro em um log.<br>
-> 🎯 **Seja específico:** Evite capturar apenas a classe genérica `Exception` se você sabe exatamente qual erro pode acontecer (como `SQLException`). Isso evita mascarar outros problemas adjacentes.<br>
+> ⚠️ **Evite blocos catch vazios:** Capturar exceções (`catch (Exception e) {}`) esconde bugs e torna a manutenção impossível. No mínimo, registre o erro em um log.
+
+> 🎯 **Seja específico:** Evite capturar apenas a classe genérica `Exception` se você sabe exatamente qual erro pode acontecer (como `SQLException`). Isso evita mascarar outros problemas adjacentes.
+
 > 🛡️ **Prefira Try-with-Resources:** Sempre que manipular arquivos, streams ou conexões de rede, utilize a sintaxe de inicialização dentro do `try (...)` para mitigar vazamentos de memória (*memory leaks*).
