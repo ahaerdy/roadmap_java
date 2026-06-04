@@ -36,34 +36,89 @@ Para manipular esse fluxo, Java utiliza cinco palavras-chave essenciais:
 Este exemplo demonstra a captura de uma exceção aritmética comum (divisão por zero) e o comportamento do bloco `finally`.
 
 ```java
+/**
+ * Não há necessidade de 'import java.lang.ArithmeticException' ou 'java.lang.System' 
+ * porque o pacote java.lang é importado de forma implícita e automática pelo compilador.
+ */
 public class ExemploBasico {
     public static void main(String[] args) {
+        
+        // Execução linear padrão do fluxo do programa
         System.out.println("Iniciando o programa...");
 
+        /**
+         * Bloco TRY (Tentar): 
+         * Delimita uma "zona de monitoramento de risco". A JVM fica atenta a qualquer 
+         * comportamento anômalo gerado pelas instruções contidas aqui dentro.
+         */
         try {
-            int numerador = 10;
-            int denominador = 0;
-            // A linha abaixo causará uma ArithmeticException porque divisão por zero é indefinida
+            int numerador = 10;   // Aloca espaço na memória Stack para a variável primitiva 'numerador'
+            int denominador = 0;  // Aloca espaço para a variável primitiva 'denominador'
+            
+            /**
+             * PASSO CRÍTICO:
+             * 1. A JVM tenta avaliar a expressão matemática da divisão.
+             * 2. O processador/JVM detecta que o denominador é zero (operação indefinida).
+             * 3. A execução normal DESTA LINHA É INTERROMPIDA IMEDIATAMENTE.
+             * 4. Nos bastidores, a JVM faz algo como: throw new ArithmeticException("/ by zero");
+             * 5. Um objeto de erro é instanciado na memória Heap contendo o Stack Trace (rastro do erro).
+             */
             int resultado = numerador / denominador; 
             
-            // Esta linha NUNCA será executada se a linha anterior falhar
+            /**
+             * LINHA IGNORADA/PULADA:
+             * Como a linha de cima "lançou" uma exceção, o fluxo abandona o bloco 'try' na hora.
+             * Esta instrução nunca será executada, pois o Java entrou em modo de busca por tratamento.
+             */
             System.out.println("Resultado: " + resultado); 
 
-        } catch (ArithmeticException e) {
-            // Este bloco captura exclusivamente erros aritméticos
+        } 
+        /**
+         * Bloco CATCH (Capturar):
+         * Aqui ocorre a DECLARAÇÃO da variável 'e'. É idêntico à assinatura de um método.
+         * - 'ArithmeticException' define o TIPO de objeto que este bloco aceita tratar.
+         * - 'e' é o NOME da referência local que apontará para o objeto de erro criado pela JVM.
+         * O escopo de 'e' é restrito estritamente ao espaço entre as chaves deste catch.
+         */
+        catch (ArithmeticException e) {
+            
+            /**
+             * TRATAMENTO DO ERRO:
+             * O fluxo do programa é desviado para cá. O "crash" foi evitado.
+             * Usamos 'System.err' em vez de 'System.out' para direcionar a mensagem ao fluxo de 
+             * erro padrão (geralmente renderizado em vermelho em consoles/IDEs).
+             */
             System.err.println("Erro capturado: Não é possível dividir um número por zero.");
-            // Imprime a pilha de chamadas para ajudar no debug (opcional, mas recomendado)
+            
+            /**
+             * Usando a variável 'e' declarada no catch:
+             * e.getMessage() -> Extrai o texto interno da exceção (retornará "/ by zero").
+             * e.printStackTrace() -> Se descomentado, imprime no console a linha exata onde o erro nasceu.
+             */
+            // System.err.println("Detalhe interno do erro: " + e.getMessage());
             // e.printStackTrace(); 
             
-        } finally {
-            // O bloco finally SEMPRE roda, independentemente de ter ocorrido erro ou não
+        } 
+        /**
+         * Bloco FINALLY (Finalmente):
+         * Bloco de execução garantida. Ele funciona como uma cláusula de segurança.
+         * Ele SERÁ executado se o 'try' rodar com sucesso, se o 'catch' capturar um erro, 
+         * ou mesmo se ocorrer um erro não capturado ou um comando 'return'.
+         * É o local ideal para fechar arquivos, conexões de banco ou desalocar recursos.
+         */
+        finally {
             System.out.println("Bloco finally executado: Limpando os recursos do sistema.");
         }
 
+        /**
+         * RETORNO AO FLUXO NORMAL:
+         * Como a exceção foi devidamente capturada e tratada pelo bloco 'catch',
+         * a JVM entende que a estabilidade foi restabelecida e continua executando
+         * as linhas subsequentes do programa normalmente.
+         */
         System.out.println("Programa finalizado com sucesso (sem crash).");
     }
 }
-
 ```
 
 ### Exemplo 2: Múltiplos Blocos `catch` e Try-with-Resources
