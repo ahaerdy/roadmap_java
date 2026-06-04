@@ -8,10 +8,10 @@ O tratamento de exceções é um mecanismo poderoso que permite gerenciar erros 
 
 Todas as exceções em Java herdam da classe `Throwable`. A estrutura divide-se principalmente em duas grandes ramificações:
 
-* **Error:** Problemas graves que a aplicação não deve tentar capturar (ex: `OutOfMemoryError`).
-* **Exception:** Condições que a aplicação pode e deve capturar. Divide-se em:
-* **Checked Exceptions (Exceções Verificadas):** São checadas em tempo de compilação. O compilador obriga você a tratá-las ou declará-las (ex: `IOException`, `SQLException`).
-* **Unchecked Exceptions (Exceções Não Verificadas):** Herdam de `RuntimeException`. Ocorrem por falhas de lógica do programador e não são checadas na compilação (ex: `NullPointerException`, `ArithmeticException`).
+- **Error:** Problemas graves que a aplicação não deve tentar capturar (ex: `OutOfMemoryError`).
+- **Exception:** Condições que a aplicação pode e deve capturar. Divide-se em:
+    - **Checked Exceptions (Exceções Verificadas):** São checadas em tempo de compilação. O compilador obriga você a tratá-las ou declará-las (ex: `IOException`, `SQLException`).
+    - **Unchecked Exceptions (Exceções Não Verificadas):** Herdam de `RuntimeException`. Ocorrem por falhas de lógica do programador e não são checadas na compilação (ex: `NullPointerException`, `ArithmeticException`).
 
 ---
 
