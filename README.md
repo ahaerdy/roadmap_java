@@ -113,8 +113,8 @@ flowchart TD
 - [x] [Passagem por Valor](./orientacao_a_objetos/aprofundando/java_is_passbyvalue_not_passbyreference/) ✓
 
 **Recursos Modernos**
-- [x] [Tratamento de Exceções](./orientacao_a_objetos/aprofundando/tratamento_de_excecoes/)
-- [ ] Expressões Lambda
+- [x] [Tratamento de Exceções](./orientacao_a_objetos/recursos_modernos/tratamento_de_excecoes/) ✓
+- [x] [Expressões Lambda](./orientacao_a_objetos/recursos_modernos/expressoes_lambda/) ✓
 - [ ] Anotações (`Annotations`)
 - [ ] Módulos
 - [ ] Optionals
