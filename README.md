@@ -141,6 +141,8 @@ flowchart TD
 
 **Coleções**
 - [x] [Arrays vs ArrayList](./topicos_avancados_concorrencia/colecoes/arrays_vs_arraylist/)
+    - [x] [Arrays](./topicos_avancados_concorrencia/colecoes/arrays_vs_arraylist/arrays/)
+    - [x] [ArrayList](./topicos_avancados_concorrencia/colecoes/arrays_vs_arraylist/arraylist/)
 - [ ] Set
 - [ ] Map
 - [ ] Queue e Deque
