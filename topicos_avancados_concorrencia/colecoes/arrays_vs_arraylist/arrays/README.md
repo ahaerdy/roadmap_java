@@ -2,6 +2,11 @@
 
 Um **Array** (ou vetor) em Java é uma estrutura de dados utilizada para armazenar uma **coleção de variáveis do mesmo tipo**. Imagine o array como uma fileira de caixas numeradas em um armário, onde cada caixa guarda um valor.
 
+<p align="center">
+  <img src="000-Midia_e_Anexos/2026-06-14-15-27-26.png" alt="" width="480">
+</p>
+
+
 Os arrays em Java possuem duas características fundamentais:
 
 1. **Homogêneos:** Armazenam apenas dados de um único tipo (por exemplo, apenas números inteiros, ou apenas textos).
