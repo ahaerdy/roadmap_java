@@ -140,7 +140,7 @@ flowchart TD
 - [ ] Threads Virtuais (Project Loom)
 
 **Coleções**
-- [ ] Arrays vs ArrayList
+- [x] [Arrays vs ArrayList](./topicos_avancados_concorrencia/colecoes/arrays_vs_arraylist/)
 - [ ] Set
 - [ ] Map
 - [ ] Queue e Deque
