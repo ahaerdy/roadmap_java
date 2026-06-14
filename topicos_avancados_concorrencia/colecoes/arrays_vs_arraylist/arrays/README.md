@@ -1,304 +1,329 @@
 # Arrays
 
-Um Array em Java é uma coleção de variáveis do mesmo tipo. Por exemplo, um array de `int` é uma coleção de variáveis do tipo `int`. As variáveis no array são ordenadas e cada uma possui um índice. Você verá como indexar em um array mais adiante neste texto. Aqui está uma ilustração de arrays em Java:
+Um **Array** (ou vetor) em Java é uma estrutura de dados utilizada para armazenar uma **coleção de variáveis do mesmo tipo**. Imagine o array como uma fileira de caixas numeradas em um armário, onde cada caixa guarda um valor.
 
-<p align="center">
-  <img src="000-Midia_e_Anexos/2026-06-14-15-27-26.png" alt="" width="360">
-</p>
+Os arrays em Java possuem duas características fundamentais:
 
-Arrays em Java são coleções de variáveis do mesmo tipo, ordenadas com um índice.
+1. **Homogêneos:** Armazenam apenas dados de um único tipo (por exemplo, apenas números inteiros, ou apenas textos).
+2. **Ordenados por Índices:** Cada caixa possui uma posição fixa chamada **índice**, que sempre começa no número **0**.
 
-## Declarando uma Variável de Array em Java
+---
 
-Uma variável de array em Java é declarada exatamente como você declararia uma variável do tipo desejado, exceto pelo fato de você adicionar `[]` após o tipo. Aqui está um exemplo simples de declaração de array em Java:
+## Declarando uma Variável de Array
+
+Declarar um array é como avisar ao Java que você pretende criar esse "armário" no futuro. A sintaxe básica consiste em colocar colchetes `[]` junto ao tipo de dado.
 
 ```java
-int[] intArray;
+// Declara um array de números inteiros chamado 'intArray'
+int[] intArray; 
 
 ```
 
-Você pode usar un array em Java como um campo (field), campo estático (static field), uma variável local ou parâmetro, assim como qualquer outra variável. Um array é simplesmente uma variação do tipo de dados. Em vez de ser uma única variável daquele tipo, é uma coleção de variáveis daquele tipo.
-
-Aqui estão mais alguns exemplos de declaração de arrays em Java:
+Você pode usar arrays em qualquer lugar onde usaria uma variável comum: como atributos de uma classe (campos), variáveis locais dentro de métodos ou parâmetros de funções.
 
 ```java
+// Declara um array para armazenar textos (referências a objetos String)
 String[] stringArray;
+
+// Declara um array para armazenar objetos de uma classe personalizada criada por você
 MyClass[] myClassArray;
 
 ```
 
-A primeira linha declara um array de referências a `String`. A segunda linha declara um array de referências a objetos da classe `MyClass`, que simboliza uma classe que você mesmo criou.
+### Onde colocar os colchetes?
 
-Na verdade, você tem a opção de escolher onde colocar os colchetes `[]` quando declara um array em Java. O primeiro local você já viu: atrás do nome do tipo de dados (ex: `String[]`). O segundo local é após o nome da variável. As seguintes declarações de array em Java são, na verdade, todas válidas:
+O Java permite colocar os colchetes `[]` tanto após o **tipo** quanto após o **nome da variável**. Ambas as abordagens abaixo funcionam:
 
 ```java
-int[] intArray;
-int intArray[];
+int[] arrayFormaA; // Abordagem recomendada (o array faz parte do tipo de dado)
+int arrayFormaB[]; // Abordagem alternativa (herdada da linguagem C)
 
-String[] stringArray;
-String stringArray[];
+String[] stringArrayA;
+String stringArrayB[];
 
-MyClass[] myClassArray;
-MyClass myClassArray[];
+MyClass[] myClassArrayA;
+MyClass myClassArrayB[];
 
 ```
 
-Pessoalmente, prefiro posicionar os colchetes `[]` após o tipo de dados (ex: `String[]`) e não após o nome da variável. Afinal, um array é um tipo especial de dado, então sinto que é mais fácil ler o código quando os colchetes são colocados logo após o tipo de dados na declaração do array.
+> ⚠️ **Boa Prática:** Prefira sempre colocar os colchetes logo após o tipo de dado (ex: `int[] intArray`). Isso deixa claro logo na leitura que o tipo daquela variável é "um bloco de inteiros" e não um inteiro simples.
 
-## Instanciando um Array em Java
+---
 
-Quando você declara uma variável de array em Java, você declara apenas a variável (referência) para o próprio array. A declaração não cria, de fato, um array. Você cria um array assim:
+## Instanciando um Array em Java (Alocando Memória)
+
+Apenas declarar a variável **não cria o array na memória**. A declaração cria apenas uma referência (um ponteiro vazio que aponta para `null`). Para de fato reservar o espaço físico das caixas no seu computador, usamos a palavra-chave `new`.
 
 ```java
-int[] intArray;
-intArray = new int[10];
+int[] intArray;          // 1. Declaração: "Vou criar um ponteiro para um array de inteiros"
+intArray = new int[10];  // 2. Instanciação: "Reserve espaço para exatamente 10 inteiros na memória"
 
 ```
 
-Este exemplo cria um array do tipo `int` com espaço para 10 variáveis `int` dentro dele.
+### Arrays de Tipos Primitivos vs. Arrays de Objetos
 
-O exemplo anterior de array em Java criou um array de `int`, que é um tipo de dado primitivo. Você também pode criar um array de referências a objetos. Por exemplo:
+O Java trata o conteúdo do seu array de duas formas diferentes, dependendo do tipo:
+
+* **Tipos Primitivos (`int`, `double`, `boolean`, etc.):** O espaço reservado guarda os valores reais diretamente. Ao usar `new int[10]`, o Java preenche automaticamente todas as 10 caixas com o valor padrão `0`.
+* **Referências a Objetos (`String`, `Carro`, etc.):** O array guarda apenas endereços de memória. Ao instanciar, todas as caixas começam com `null` (vazias), indicando que não apontam para nenhum objeto real ainda.
 
 ```java
+// Cria um array de referências para Strings. Inicialmente, todas as 10 posições são 'null'.
 String[] stringArray = new String[10];
 
 ```
 
-O Java permite que você crie um array de referências para qualquer tipo de objeto (para instâncias de qualquer classe).
+---
 
 ## Literais de Array em Java
 
-A linguagem de programação Java contém um atalho para instanciar arrays de tipos primitivos e strings. Se você já sabe quais valores deseja inserir no array, pode usar um literal de array. Aqui está como um literal de array se parece no código Java:
+Se você já sabe quais valores deseja colocar dentro do seu array desde o início, você não precisa definir o tamanho manualmente e atribuir item por item. O Java oferece um atalho chamado **Literal de Array**:
 
 ```java
-int[] ints2 = new int[]{ 1,2,3,4,5,6,7,8,9,10 };
+// Forma completa de criar um array já inicializado com valores
+int[] ints2 = new int[]{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
 ```
 
-Note como os valores a serem inseridos no array são listados dentro do bloco `{ ... }`. O tamanho desta lista também determina o tamanho do array criado.
-
-Na verdade, você não precisa escrever a parte `new int[]` nas versões mais recentes do Java. Você pode apenas escrever:
+Nas versões modernas do Java, você pode encurtar ainda mais essa sintaxe omitindo o trecho `new int[]`:
 
 ```java
-int[] ints2 = { 1,2,3,4,5,6,7,8,9,10 };
+// Atalho moderno e mais limpo (o Java infere o tipo e o tamanho automaticamente)
+int[] ints2 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }; 
 
 ```
 
-É a parte dentro das chaves que é chamada de literal de array.
-
-Este estilo funciona para arrays de todos os tipos primitivos, bem como para arrays de strings. Aqui está um exemplo com array de strings:
+Essa facilidade funciona perfeitamente para qualquer tipo de dado, incluindo arrays de objetos como `String`:
 
 ```java
+// Cria um array de String com tamanho 3, já preenchido com os textos
 String[] strings = {"one", "two", "three"};
 
 ```
 
-## O Tamanho do Array em Java Não Pode Ser Alterado
+---
 
-Uma vez que um array foi criado, seu tamanho não pode ser redimensionado. Em algumas linguagens de programação (ex: JavaScript), os arrays podem mudar de tamanho após a criação, mas em Java um array não pode mudar de tamanho depois de criado. Se você precisa de uma estrutura de dados semelhante a um array que possa mudar de tamanho, deve usar uma `List`, ou pode criar um array redimensionável em Java. Em alguns casos, você também pode usar um `RingBuffer` em Java que, a propósito, é implementado internamente utilizando um array Java.
+## O Tamanho do Array Não Pode Ser Alterado
 
-## Acessando Elementos de um Array em Java
+> 🚨 **Regra de Ouro do Java:** Uma vez instanciado (criado), o tamanho de um array é **imutável**.
 
-Cada variável em um array Java também é chamada de "elemento". Portanto, o exemplo mostrado anteriormente criou um array com espaço para 10 elementos, e cada elemento é uma variável do tipo `int`.
+Se você criou um `new int[10]`, ele terá exatamente 10 posições até o fim de sua vida útil. Diferente de linguagens como JavaScript ou Python, onde os arrays crescem dinamicamente, em Java se você precisar de mais espaço, você terá que:
 
-Cada elemento no array possui um índice (um número). Você pode acessar cada elemento no array através do seu índice. Aqui está um exemplo:
+* Criar um novo array maior e copiar os elementos do antigo para o novo.
+* Utilizar uma estrutura dinâmica da API do Java, como um `ArrayList`.
+
+---
+
+## Acessando Elementos de um Array
+
+Para ler ou modificar o valor guardado dentro de uma "caixa" do array, usamos o número do seu **índice** dentro de colchetes.
 
 ```java
+// Atribui o valor 0 à primeira posição do array (Índice 0)
 intArray[0] = 0;
+
+// Lê o valor guardado no índice 0 e o copia para a variável 'firstInt'
 int firstInt = intArray[0];
 
 ```
 
-Este exemplo primeiro define o valor do elemento (`int`) com índice 0 e, em segundo lugar, lê o valor do elemento com índice 0 para uma variável `int`.
+Lembre-se sempre: se o tamanho do seu array é $N$, os índices válidos vão de $0$ até $N-1$.
+Se você tentar acessar um índice fora desse limite (como o índice 10 em um array de tamanho 10), o Java interromperá seu programa lançando o famoso erro: `ArrayIndexOutOfBoundsException`.
 
-Você pode usar os elementos em um array Java exatamente como se fossem variáveis comuns. Você pode ler o valor deles, atribuir valores a eles, usar os elementos em cálculos e passar elementos específicos como parâmetros em chamadas de métodos.
+---
 
-Os índices dos elementos em um array Java sempre começam em 0 e continuam até o número correspondente ao tamanho do array menos 1. Portanto, no exemplo acima de um array com 10 elementos, os índices vão de 0 a 9.
+## Tamanho do Array (`length`)
 
-## Tamanho do Array
-
-Você pode acessar o tamanho de um array através do seu campo `length`. Aqui está um exemplo:
+Qualquer array em Java possui uma propriedade interna chamada `length` que devolve a quantidade total de elementos que ele pode armazenar.
 
 ```java
-int[] intArray = new int[10];
-int arrayLength = intArray.length;
+int[] intArray = new int[10]; // Instancia um array com 10 posições
+
+// A variável 'arrayLength' recebe o valor 10
+int arrayLength = intArray.length; 
 
 ```
 
-Neste exemplo, a variável chamada `arrayLength` conterá o valor 10 após a execução da segunda linha de código.
+---
 
-## Iterando Arrays
+## Iterando Arrays (Percorrendo Elementos)
 
-Você pode percorrer todos os elementos de um array usando o laço `for` do Java. Aqui está um exemplo de iteração de um array com um laço `for` em Java:
+Para ler, exibir ou modificar todos os elementos de um array de ponta a ponta, utilizamos estruturas de repetição (laços).
+
+### 1. Laço `for` Tradicional
+
+É a escolha ideal quando você **precisa do número do índice** durante a execução do loop (seja para modificar o valor ou para usar o próprio índice na lógica).
 
 ```java
+// Cria um array de String com 10 posições (todas começam como null)
 String[] stringArray = new String[10];
 
-for(int i=0; i < stringArray.length; i++) {
-    stringArray[i] = "String no " + i;
+// Primeiro Loop: Usa o índice 'i' para preencher cada gaveta com um texto customizado
+for(int i = 0; i < stringArray.length; i++) {
+    stringArray[i] = "String no " + i; // Atribui, ex: "String no 0", "String no 1"...
 }
 
-for(int i=0; i < stringArray.length; i++) {
-    System.out.println( stringArray[i] );
-}
-
-```
-
-Este exemplo primeiro cria um array de referências a `String`. Quando você cria um array de referências a objetos pela primeira vez, cada uma das posições no array aponta para `null` - nenhum objeto.
-
-O primeiro dos dois laços `for` itera pelo array de `String`, cria uma `String` e faz com que a posição referencie essa `String`.
-
-O segundo dos dois laços `for` itera pelo array de `String` e imprime todas as strings que as posições referenciam.
-
-Se este tivesse sido um array de `int` (valores primitivos), poderia ser assim:
-
-```java
-int[] intArray = new int[10];
-
-for(int i=0; i < intArray.length; i++) {
-    intArray[i] = i;
-}
-
-for(int i=0; i < intArray.length; i++) {
-    System.out.println( intArray[i] );
+// Segundo Loop: Percorre o array novamente, apenas para imprimir os valores no console
+for(int i = 0; i < stringArray.length; i++) {
+    System.out.println(stringArray[i]); // Imprime o texto contido na posição 'i'
 }
 
 ```
 
-A variável `i` é inicializada com 0 e roda até o tamanho do array menos 1. Neste caso, `i` assume os valores de 0 a 9, repetindo o código dentro do laço `for` uma vez para cada iteração, e a cada iteração `i` possui um valor diferente.
-
-Você também pode iterar um array usando o laço "for-each" em Java. Aqui está como se parece:
+Veja o mesmo exemplo aplicado a um array de inteiros primitivos:
 
 ```java
-int[] intArray = new int[10];
+int[] intArray = new int[10]; // Cria um array de 10 inteiros
 
+// Loop de preenchimento: grava o valor do próprio índice dentro de cada caixa
+for(int i = 0; i < intArray.length; i++) {
+    intArray[i] = i; // Índice 0 recebe 0, índice 1 recebe 1...
+}
+
+// Loop de leitura: exibe os números na tela
+for(int i = 0; i < intArray.length; i++) {
+    System.out.println(intArray[i]);
+}
+
+```
+
+### 2. Laço `for-each` (Enhanced for)
+
+Uma sintaxe muito mais limpa introduzida para quando você **apenas precisa ler os valores**, sem se importar com a posição/índice de cada um.
+
+```java
+int[] intArray = new int[10]; // Cria um array de 10 inteiros
+
+// Lê cada elemento sequencialmente. O valor atual é copiado para a variável 'theInt'
 for(int theInt : intArray) {
-    System.out.println(theInt);
+    System.out.println(theInt); // Apenas exibe o valor (não permite alterar o array original)
 }
 
 ```
 
-O laço for-each lhe dá acesso a cada elemento no array, um de cada vez, mas não fornece informações sobre o índice de cada elemento. Além disso, você só tem acesso ao valor. Você não pode alterar o valor do elemento naquela posição. Se precisar disso, utilize um laço `for` normal, conforme mostrado anteriormente.
-
-O laço for-each também funciona com arrays de objetos. Aqui está um exemplo que mostra como iterar um array de objetos `String`:
+O `for-each` também funciona perfeitamente com objetos:
 
 ```java
-String[] stringArray = {"one", "two", "three"};
+String[] stringArray = {"one", "two", "three"}; // Array inicializado com 3 textos
 
+// A cada rodada, 'theString' assume o valor de uma das palavras do array
 for(String theString : stringArray) {
-    System.out.println(theString);
+    System.out.println(theString); // Imprime "one", depois "two", depois "three"
 }
 
 ```
+
+---
 
 ## Arrays Multidimensionais em Java
 
-Os exemplos mostrados acima criaram arrays com uma única dimensão, o que significa elementos com índices partindo de 0 em diante. No entanto, é possível criar arrays onde cada elemento possui dois ou mais índices que o identificam (localizam) no array.
+Até agora vimos tabelas de uma linha só (unidimensionais). Um array multidimensional é, na verdade, **um array de arrays**. O tipo mais comum é o bidimensional (matriz), que simula uma tabela com linhas e colunas.
 
-Você cria um array multidimensional em Java anexando um conjunto de colchetes (`[]`) por dimensão que deseja adicionar. Aqui está um exemplo que cria um array bidimensional:
+Para adicionar dimensões, basta adicionar mais pares de colchetes `[][]`.
 
 ```java
+// Cria uma matriz (tabela) de inteiros com 10 linhas e 20 colunas
 int[][] intArray = new int[10][20];
 
 ```
 
-Este exemplo cria um array bidimensional de elementos `int`. O array contém 10 elementos na primeira dimensão e 20 elementos na segunda dimensão. Em outras palavras, este exemplo cria um array de arrays de elementos `int`. O array de arrays tem espaço para 10 arrays de `int`, e cada array de `int` tem espaço para 20 elementos `int`.
+Visualmente, o Java cria um grande array principal com 10 posições, e dentro de cada uma dessas posições existe outro array completo com 20 elementos inteiros.
 
-Você acessa os elementos em um array multidimensional com um índice por dimensão. No exemplo acima, você teria que usar dois índices. Aqui está um exemplo:
+Para acessar ou modificar dados em matrizes, você deve fornecer as coordenadas de **linha** e **coluna** do elemento desejado:
 
 ```java
-int[][] intArray = new int[10][20];
+int[][] intArray = new int[10][20]; // Inicializa a matriz
 
-intArray[0][2] = 129;
+intArray[0][2] = 129; // Grava o número 129 na linha 0, coluna 2
 
-int oneInt = intArray[0][2];
+int oneInt = intArray[0][2]; // Lê o valor da linha 0, coluna 2 e salva em 'oneInt'
 
 ```
-
-A variável chamada `oneInt` conterá o valor 129 após a execução da última linha de código Java.
 
 ### Iterando Arrays Multidimensionais
 
-Quando você itera um array multidimensional em Java, você precisa iterar cada dimensão do array separadamente. Aqui está como se parece a iteração de um array multidimensional em Java:
+Para percorrer uma matriz bidimensional por completo, precisamos de um **laço for aninhado** (um `for` dentro do outro). O primeiro laço percorre as linhas e o segundo percorre as colunas daquela linha específica.
 
 ```java
-int[][] intArray = new int[10][20];
+int[][] intArray = new int[10][20]; // Cria a estrutura da matriz
 
-for(int i=0; i < intArray.length; i++){
-    for(int j=0; j < intArray[i].length; j++){
-        System.out.println("i: " + i + ", j: " + j);
+// O laço externo percorre cada uma das 10 linhas (i)
+for(int i = 0; i < intArray.length; i++){
+    // O laço interno percorre as 20 colunas (j) da linha atual (intArray[i])
+    for(int j = 0; j < intArray[i].length; j++){
+        System.out.println("Linha i: " + i + ", Coluna j: " + j);
     }
 }
 
 ```
+
+---
 
 ## Inserindo Elementos em um Array
 
-Às vezes, você precisa inserir elementos em algum lugar de um array Java. Aqui está como você insere un novo valor em um array em Java:
+Como o tamanho do array é fixo, se você quiser "inserir" um elemento no meio dele, terá que "empurrar" manualmente todos os elementos seguintes uma casa para o lado, abrindo um espaço vazio para o novo valor. Note que o último elemento do array acabará sendo "empurrado para fora" e será perdido.
 
 ```java
-int[] ints = new int[20];
+int[] ints = new int[20]; // Cria um array de tamanho 20
 
-int insertIndex = 10;
-int newValue    = 123;
+int insertIndex = 10;     // Define que queremos inserir na posição (índice) 10
+int newValue    = 123;    // O novo valor que será inserido
 
-// move os elementos abaixo do ponto de inserção.
-for(int i=ints.length-1; i > insertIndex; i--){
-    ints[i] = ints[i-1];
+// Loop invertido: começa do final do array e move cada elemento para a direita
+for(int i = ints.length - 1; i > insertIndex; i--){
+    ints[i] = ints[i-1];  // O elemento da esquerda é copiado para a direita
 }
 
-// insere o novo valor
-ints[insertIndex] = newValue;
+ints[insertIndex] = newValue; // Com o espaço aberto, o novo valor é inserido no índice 10
 
-System.out.println(Arrays.toString(ints));
+// Converte o array em texto legível e o imprime
+System.out.println(Arrays.toString(ints)); 
 
 ```
 
-O exemplo primeiro cria um array. Depois, define um índice de inserção e um novo valor para inserir. Em seguida, todos os elementos a partir do índice de inserção até o final do array são deslocados um índice para baixo no array. Note que isso deslocará o último valor do array para fora dele (ele será simplesmente apagado).
-
-O código de inserção de array acima poderia ser incorporado em um método Java. Aqui está como isso poderia parecer:
+Podemos transformar essa lógica em um método utilitário reutilizável:
 
 ```java
+// Método que automatiza o processo de inserção recebendo o array alvo, o índice e o valor
 public void insertIntoArray(int[] array, int insertIndex, int newValue){
-    // move os elementos abaixo do ponto de inserção.
-    for(int i=array.length-1; i > insertIndex; i--){
-        array[i] = array[i-1];
+    // Desloca os elementos para a direita de trás para frente para não sobrescrever os dados
+    for(int i = array.length - 1; i > insertIndex; i--){
+        array[i] = array[i-1]; // Move o elemento uma posição para frente
     }
     
-    // insere o novo valor
-    array[insertIndex] = newValue;
+    array[insertIndex] = newValue; // Insere o valor desejado na vaga liberada
 }
 
 ```
 
-Este método recebe um array `int[]` como parâmetro, bem como o índice para inserir o novo valor e o próprio novo valor. Você pode inserir elementos em um array chamando este método assim:
+Para usar este método, bastaria chamá-lo passando as variáveis necessárias:
 
 ```java
-int[] ints = new int[20];
+int[] ints = new int[20]; // Cria o array base
 
-insertIntoArray(ints, 0, 10);
-insertIntoArray(ints, 1, 23);
-insertIntoArray(ints, 9, 67);
+// Exemplo de chamadas consecutivas para preencher posições específicas deslocando o resto
+insertIntoArray(ints, 0, 10); // Insere 10 no índice 0
+insertIntoArray(ints, 1, 23); // Insere 23 no índice 1
+insertIntoArray(ints, 9, 67); // Insere 67 no índice 9
 
 ```
 
-Claro, se o método `insertIntoArray()` estiver localizado em uma classe diferente do código acima, você precisará de um objeto daquela classe para poder chamar o método. Ou, se o método `insertIntoArray()` for `static`, você precisará colocar o nome da classe e um ponto antes do nome do método.
+---
 
 ## Removendo Elementos de um Array
 
-Às vezes, você deseja remover um elemento de um array Java. Aqui está o código para remover um elemento de um array em Java:
+A remoção de um elemento funciona de maneira inversa à inserção. Quando queremos apagar um item do meio do array, precisamos puxar todos os elementos que estão à direita dele uma posição para a esquerda. Isso sobrescreve (apaga) o valor indesejado. No final do processo, a última posição do array ficará duplicada.
 
 ```java
-int[] ints = new int[20];
+int[] ints = new int[20]; // Cria um array com 20 posições
 
-ints[10] = 123;
+ints[10] = 123;           // Coloca o valor 123 no índice 10 apenas como teste
+int removeIndex = 10;     // Define que queremos remover o elemento do índice 10
 
-int removeIndex = 10;
-
-for(int i = removeIndex; i < ints.length -1; i++){
-    ints[i] = ints[i + 1];
+// O loop começa a partir do índice removido e caminha até o penúltimo elemento
+for(int i = removeIndex; i < ints.length - 1; i++){
+    ints[i] = ints[i + 1]; // Puxa o elemento da direita para a esquerda
 }
+// Resultado: O elemento do índice 10 sumiu, e o valor do índice 19 agora está repetido no 18 e 19.
 
 ```
-
-Este exemplo primeiro cria um array de `int`. Depois, define o valor do elemento com índice 10 como 123. Em seguida, o exemplo remove o elemento com índice 10. Ele remove o elemento deslocando todos os elementos abaixo do índice 10 uma posição para cima no array. Após a remoção, o último elemento no array existirá duas vezes. Tanto no último quanto no penúltimo elemento.
