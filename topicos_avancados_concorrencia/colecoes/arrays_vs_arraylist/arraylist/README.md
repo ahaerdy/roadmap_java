@@ -1,6 +1,6 @@
-## Java List (e ArrayList)
+## List (e ArrayList)
 
-A interface Java List (`java.util.List`) representa uma **sequência ordenada de objetos**. Pense nela como uma fila de banco ou uma lista de compras: a ordem em que você coloca os elementos importa, e você pode acessar qualquer item sabendo a sua posição exata.
+A interface List (`java.util.List`) representa uma **sequência ordenada de objetos**. Pense nela como uma fila de banco ou uma lista de compras: a ordem em que você coloca os elementos importa, e você pode acessar qualquer item sabendo a sua posição exata.
 
 Cada elemento em uma `List` possui um **índice** (uma posição numérica).
 
